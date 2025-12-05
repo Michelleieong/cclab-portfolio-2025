@@ -1,119 +1,79 @@
-/* 让所有元素的尺寸计算更稳定 */
-* {
-  box-sizing: border-box;
-}
-
-/* 整个页面的背景 & 基础文字 */
+/* 💙 整体背景：柔和天使蓝渐变 */
 body {
   margin: 0;
-  padding: 60px 20px;
-  font-family: "Courier New", "Lucida Console", monospace;  /* 打字机感 */
-  background-color: #f4f9ff;   /* 很淡的天蓝色 */
-  color: #111;
-  display: flex;
-  justify-content: center;     /* 让中间那块 main 居中 */
+  padding: 50px;
+  font-family: "Georgia", serif;
+  background: linear-gradient(to bottom, #e8f3ff, #ffffff);
+  color: #2a2a2a;
 }
 
-/* 中间这张“卡片” */
+/* 页面内容宽度 */
 main {
-  max-width: 950px;            /* 比之前稍微宽一点 */
-  width: 100%;
-  background-color: #ffffff;   /* 白色卡片 */
-  border-radius: 18px;         /* 圆角 */
-  padding: 40px 60px 60px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.07);  /* 阴影，比较“海报感” */
-  border: 1px solid #e3ecff;   /* 很淡的蓝色描边 */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center; /* ⭐ 全部内容居中 */
 }
 
-/* 顶部导航：右上角的小字菜单 */
+/* 导航栏 */
 nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
   display: flex;
-  gap: 20px;
-  justify-content: flex-end;     /* 靠右 */
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  justify-content: center; 
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
 nav a {
+  font-family: "Georgia", serif;
+  font-size: 18px;
   text-decoration: none;
-  color: #555;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
+  color: #5a83c7;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
 }
 
 nav a:hover {
-  border-bottom-color: #9ab5ff;  /* hover 的淡蓝下划线 */
+  border-bottom-color: #5a83c7;
 }
 
-/* 主标题 My Portfolio */
+/* 大标题（My Portfolio） */
 h1 {
-  font-size: 3rem;             /* 变大 */
-  margin: 0 0 10px 0;
-  color: #8bb5ff;              /* 柔和天蓝色 */
-  letter-spacing: 0.08em;      /* 稍微拉开一点间距，有海报感 */
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #5a83c7;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
-/* 小标题 Projects / About / Extra 等 */
+/* 二级标题（Projects / About / etc) */
 h2 {
+  font-size: 1.5rem;
+  color: #3f5e96;
+  margin-top: 40px;
+}
+
+/* 正文 */
+p {
   font-size: 1rem;
-  margin-top: 32px;
-  margin-bottom: 6px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  line-height: 1.6;
   color: #444;
 }
 
-/* 正文段落 */
-p {
-  line-height: 1.6;
-  font-size: 0.9rem;
-  margin-top: 4px;
-}
-
-/* 首页里 project 的链接列表（不是导航那个） */
-main ul {
+/* 项目列表 */
+ul.project-list {
   list-style: none;
-  padding-left: 0;
-  margin-top: 6px;
+  padding: 0;
 }
 
-main ul li {
-  margin: 3px 0;
+ul.project-list li {
+  margin: 6px 0;
 }
 
-main ul li a {
-  color: #4f6dff;
+ul.project-list a {
+  font-size: 18px;
+  color: #5a83c7;
   text-decoration: none;
 }
 
-main ul li a:hover {
+ul.project-list a:hover {
   text-decoration: underline;
-}
-
-/* p5 iframe 的样式（给 project 页面用） */
-iframe {
-  width: 100%;
-  max-width: 800px;
-  height: 500px;
-  border: 2px solid #ccd8ff;
-  border-radius: 8px;
-}
-
-/* 手机上边距稍微小一点 */
-@media (max-width: 600px) {
-  body {
-    padding: 30px 12px;
-  }
-
-  main {
-    padding: 30px 20px 40px;
-  }
-
-  h1 {
-    font-size: 2.4rem;
-  }
 }
