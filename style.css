@@ -1,69 +1,75 @@
-/* 背景 */
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Times New Roman', serif;
-  background: #eef3f8; /* 淡天蓝背景 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-/* 主标题 Bonheur Royale 字体 */
-.main-title {
-  font-family: 'Bonheur Royale', cursive;
-  font-size: 64px;
-  color: #7aa6dd;
-  text-align: center;
-  margin: 0 0 20px 0;
-}
-
-/* 内容卡片真正置中 */
-main {
-  width: 70%;
-  max-width: 800px;
-  background: white;
   padding: 40px;
-  border-radius: 22px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  text-align: left;
+  font-family: "Courier New", "Lucida Console", monospace; /* typewriter vibe */
+  background-color: #f4ecff; /* light purple */
+  color: #111;
 }
 
-/* 导航在右上角 */
+/* Page layout */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 20px 0;
   display: flex;
-  justify-content: flex-end;
-  gap: 25px;
+  gap: 16px;
 }
 
 nav a {
   text-decoration: none;
-  color: #666;
-  font-size: 14px;
-  letter-spacing: 1px;
+  color: #333;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
 }
 
 nav a:hover {
-  color: #000;
+  border-bottom-color: #a98fd3; /* purple accent */
 }
 
-/* Projects 标题 */
+/* Headings */
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  color: #111;
+}
+
 h2 {
-  font-size: 18px;
-  margin-top: 20px;
-  letter-spacing: 1px;
+  font-size: 1.4rem;
+  margin-top: 30px;
+  margin-bottom: 8px;
+  color: #333;
 }
 
+/* Paragraphs */
 p {
-  font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-/* 删除你说的底下那条白块 */
-main > div {
-  display: none;
+/* Project iframe */
+iframe {
+  width: 100%;           /* fills the content width */
+  max-width: 800px;      /* don’t get too huge on big screens */
+  height: 500px;         /* taller so more of the sketch shows */
+  border: 2px solid #333;
+  border-radius: 4px;
 }
+
+/* Optional: keep content off the very edges on mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+}
+
