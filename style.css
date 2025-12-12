@@ -5,6 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 
 /* Reset and Global Styles */
 * {
@@ -527,12 +530,13 @@ canvas {
 }
 
 .letter-greeting {
-  font-family: 'Caveat', cursive;
-  font-size: 28px;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 20px;
   color: var(--text-color);
   margin-bottom: 50px;
-  letter-spacing: 0.02em;
-  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .letter-body {
@@ -549,23 +553,24 @@ canvas {
 }
 
 .letter-body h2 {
-  font-family: 'Caveat', cursive;
-  font-size: 24px;
-  font-weight: 500;
+  font-family: 'VT323', 'Courier New', monospace;
+  font-size: 22px;
+  font-weight: 400;
   margin-top: 50px;
   margin-bottom: 20px;
   color: var(--text-color);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .letter-signature {
-  font-family: 'Caveat', cursive;
-  font-size: 26px;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  font-size: 18px;
   margin-top: 80px;
   text-align: right;
   color: var(--text-color);
-  letter-spacing: 0.02em;
-  font-weight: 500;
+  letter-spacing: 0.08em;
+  font-weight: 400;
 }
 
 .sheep-stamp {
