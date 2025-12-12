@@ -18,6 +18,9 @@
 
 :root {
   --paper-bg: #fbf7f2;
+  --angel-blue: #e8f4f8;
+  --angel-blue-light: #f0f8fb;
+  --angel-blue-dark: #d1e8f0;
   --text-color: #2c2c2c;
   --text-light: #666;
   --border-color: rgba(44, 44, 44, 0.1);
@@ -35,6 +38,31 @@ body {
   margin: 0;
   overflow-x: hidden;
   position: relative;
+}
+
+/* Home page - Angel blue background */
+body.home-page {
+  background: linear-gradient(180deg, var(--angel-blue-light) 0%, var(--angel-blue) 50%, var(--angel-blue-dark) 100%);
+  background-attachment: fixed;
+}
+
+body.home-page::before {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    );
+  opacity: 0.3;
 }
 
 /* Subtle grain texture using CSS */
@@ -240,6 +268,12 @@ main {
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px var(--shadow);
   backdrop-filter: blur(10px);
+}
+
+body.home-page .card {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 16px rgba(135, 206, 235, 0.15);
 }
 
 .card:hover {
