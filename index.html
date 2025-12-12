@@ -2,34 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>My Portfolio</h1>
-<main>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="extra.html">Extra</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="extra.html">Extra</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <h2>Projects</h2>
-  <ul>
-    <li><a href="LostandFound.html">Project 1</a></li>
-    <li><a href="FaceGenerator.html">Project 2</a></li>
-    <li><a href="project3.html">Project 3</a></li>
-    <li><a href="project4.html">Project 4</a></li>
-    <li><a href="project5.html">Project 5</a></li>
-    <li><a href="project6.html">Project 6</a></li>
-    <li><a href="project7.html">Project 7</a></li>
-  </ul>
-
-  <p>
-    This is the home page for my portfolio. Use the links above to explore my projects and learn more about me.
-  </p>
   <main>
+    <section class="hero">
+      <h1 class="hero-title">My Portfolio</h1>
+      <p class="hero-subtitle">Creative Coding Projects</p>
+    </section>
+
+    <section class="projects-grid">
+      <div class="project-card">
+        <a href="LostandFound.html">
+          <div class="project-number">01</div>
+          <h2 class="project-title">Project 1</h2>
+          <p class="project-description">Lost and Found</p>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <a href="FaceGenerator.html">
+          <div class="project-number">02</div>
+          <h2 class="project-title">Project 2</h2>
+          <p class="project-description">Face Generator</p>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <a href="PROJECT3.html">
+          <div class="project-number">03</div>
+          <h2 class="project-title">Project 3</h2>
+          <p class="project-description">Interactive Experience</p>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <a href="project4.html">
+          <div class="project-number">04</div>
+          <h2 class="project-title">Project 4</h2>
+          <p class="project-description">Creative Exploration</p>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <a href="Project5.html">
+          <div class="project-number">05</div>
+          <h2 class="project-title">Project 5</h2>
+          <p class="project-description">Digital Art</p>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <a href="#">
+          <div class="project-number">06</div>
+          <h2 class="project-title">Project 6</h2>
+          <p class="project-description">Coming Soon</p>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <a href="#">
+          <div class="project-number">07</div>
+          <h2 class="project-title">Project 7</h2>
+          <p class="project-description">Coming Soon</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Portfolio</p>
+  </footer>
 </body>
 </html>
