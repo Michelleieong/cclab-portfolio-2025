@@ -121,6 +121,10 @@ h2 {
   z-index: 1;
 }
 
+.archive-container {
+  position: relative;
+}
+
 /* Header and Navigation */
 header {
   position: fixed;
@@ -431,6 +435,75 @@ body.home-page .image-strip-item {
   font-family: 'Inter', sans-serif;
 }
 
+.footer-sign {
+  margin-top: 30px;
+  opacity: 0.8;
+}
+
+.footer-sign img {
+  max-width: 80px;
+  height: auto;
+  display: inline-block;
+}
+
+/* Decorative sheep elements */
+.decorative-sheep {
+  position: absolute;
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.decorative-sheep img {
+  max-width: 50px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+body.home-page .decorative-sheep-1 {
+  top: 150px;
+  right: 3%;
+  transform: rotate(-12deg);
+}
+
+body.home-page .decorative-sheep-2 {
+  bottom: 250px;
+  left: 5%;
+  transform: rotate(8deg);
+}
+
+.archive-container .decorative-sheep-1 {
+  top: 100px;
+  right: 2%;
+  transform: rotate(-10deg);
+}
+
+.archive-container .decorative-sheep-2 {
+  bottom: 200px;
+  left: 3%;
+  transform: rotate(12deg);
+}
+
+/* Visual intro for Extra page */
+.visual-intro {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+  text-align: center;
+}
+
+.visual-intro img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
 /* Project Page Specific */
 .project-hero {
   text-align: center;
@@ -578,13 +651,12 @@ body.home-page .envelope-image {
 }
 
 .letter-greeting {
-  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-size: 20px;
   color: var(--text-color);
   margin-bottom: 50px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   font-weight: 400;
-  text-transform: uppercase;
 }
 
 .letter-body {
@@ -601,8 +673,8 @@ body.home-page .envelope-image {
 }
 
 .letter-body h2 {
-  font-family: 'VT323', 'Courier New', monospace;
-  font-size: 22px;
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-size: 18px;
   font-weight: 400;
   margin-top: 50px;
   margin-bottom: 20px;
@@ -612,12 +684,12 @@ body.home-page .envelope-image {
 }
 
 .letter-signature {
-  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-size: 18px;
   margin-top: 80px;
   text-align: right;
   color: var(--text-color);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   font-weight: 400;
 }
 
