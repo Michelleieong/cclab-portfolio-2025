@@ -2,6 +2,7 @@
 
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Italianno&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
 /* Reset and Global Styles */
 * {
@@ -468,4 +469,123 @@ main {
 canvas {
   display: block;
   margin: 0 auto;
+}
+
+/* About Page - Love Letter Style */
+.letter-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  text-align: left;
+}
+
+.letter-greeting {
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 40px;
+  letter-spacing: 0.05em;
+}
+
+.letter-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 2;
+  color: var(--text-color);
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.letter-body p {
+  margin-bottom: 24px;
+}
+
+.letter-body h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  color: var(--text-light);
+}
+
+.letter-signature {
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-size: 18px;
+  margin-top: 60px;
+  text-align: right;
+  color: var(--text-color);
+  letter-spacing: 0.05em;
+}
+
+/* Extra Page - Visual Archive / Gallery */
+.archive-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+.archive-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.archive-item {
+  aspect-ratio: 1;
+  border: 0.5px solid var(--border-color);
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.archive-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--shadow);
+  border-color: var(--accent);
+}
+
+.archive-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.archive-item-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.02) 10px,
+    rgba(0, 0, 0, 0.02) 20px
+  );
+}
+
+@media (max-width: 768px) {
+  .letter-container {
+    padding: 60px 24px;
+  }
+
+  .archive-container {
+    padding: 60px 24px;
+  }
+
+  .archive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
 }
