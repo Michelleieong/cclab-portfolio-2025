@@ -533,6 +533,10 @@ canvas {
   text-align: center;
 }
 
+body.home-page .envelope-hero {
+  padding: 140px 40px;
+}
+
 .envelope-image {
   max-width: 400px;
   width: 100%;
