@@ -46,25 +46,6 @@ body.home-page {
   background-attachment: fixed;
 }
 
-body.home-page::before {
-  background-image: 
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.03) 2px,
-      rgba(255, 255, 255, 0.03) 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.03) 2px,
-      rgba(255, 255, 255, 0.03) 4px
-    );
-  opacity: 0.3;
-}
-
 /* Subtle grain texture using CSS */
 body::before {
   content: '';
