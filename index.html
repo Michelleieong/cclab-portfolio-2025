@@ -3,87 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Love Letters to Code & Fashion — Michelle Yang</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="extra.html">Extra</a></li>
-      </ul>
-    </nav>
+    <div class="header-content">
+      <div class="logo-text">
+        Michelle Yang / Love Letter <span class="lamb-mark">羊</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="extra.html">Extra</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero">
-      <h1 class="hero-title">My Portfolio</h1>
-      <p class="hero-subtitle">Creative Coding Projects</p>
-    </section>
+    <div class="page-wrap">
+      <section class="hero">
+        <h1>Love Letters to Code & Fashion</h1>
+        <p class="hero-subtitle">Michelle Yang · Parsons DT</p>
+        <p class="hero-greeting">Dear visitor, welcome…</p>
+      </section>
 
-    <section class="projects-grid">
-      <div class="project-card">
-        <a href="LostandFound.html">
-          <div class="project-number">01</div>
-          <h2 class="project-title">Project 1</h2>
-          <p class="project-description">Lost and Found</p>
-        </a>
-      </div>
+      <section class="grid">
+        <div class="card">
+          <a href="LostandFound.html">
+            <div class="tag">01</div>
+            <h3 class="card-title">Lost and Found</h3>
+            <p class="card-description">A serene scene captured in code</p>
+            <span class="card-link">Open →</span>
+          </a>
+        </div>
 
-      <div class="project-card">
-        <a href="FaceGenerator.html">
-          <div class="project-number">02</div>
-          <h2 class="project-title">Project 2</h2>
-          <p class="project-description">Face Generator</p>
-        </a>
-      </div>
+        <div class="card">
+          <a href="FaceGenerator.html">
+            <div class="tag">02</div>
+            <h3 class="card-title">Face Generator</h3>
+            <p class="card-description">Inspired by Comme des Garçons Play</p>
+            <span class="card-link">Open →</span>
+          </a>
+        </div>
 
-      <div class="project-card">
-        <a href="Project3.html">
-          <div class="project-number">03</div>
-          <h2 class="project-title">Project 3</h2>
-          <p class="project-description">Experimental Clock</p>
-        </a>
-      </div>
+        <div class="card">
+          <a href="Project3.html">
+            <div class="tag">03</div>
+            <h3 class="card-title">Experimental Clock</h3>
+            <p class="card-description">Time across three cities</p>
+            <span class="card-link">Open →</span>
+          </a>
+        </div>
 
-      <div class="project-card">
-        <a href="project4.html">
-          <div class="project-number">04</div>
-          <h2 class="project-title">Project 4</h2>
-          <p class="project-description">Exquisite Corpse</p>
-        </a>
-      </div>
+        <div class="card">
+          <a href="project4.html">
+            <div class="tag">04</div>
+            <h3 class="card-title">Exquisite Corpse</h3>
+            <p class="card-description">Collaborative character creation</p>
+            <span class="card-link">Open →</span>
+          </a>
+        </div>
 
-      <div class="project-card">
-        <a href="project5.html">
-          <div class="project-number">05</div>
-          <h2 class="project-title">Project 5</h2>
-          <p class="project-description">Digital Art</p>
-        </a>
-      </div>
+        <div class="card">
+          <a href="project5.html">
+            <div class="tag">05</div>
+            <h3 class="card-title">Optical Illusion</h3>
+            <p class="card-description">Moiré patterns and motion</p>
+            <span class="card-link">Open →</span>
+          </a>
+        </div>
 
-      <div class="project-card">
-        <a href="Project6.html">
-          <div class="project-number">06</div>
-          <h2 class="project-title">Project 6</h2>
-          <p class="project-description">Snack Tree</p>
-        </a>
-      </div>
+        <div class="card">
+          <a href="Project6.html">
+            <div class="tag">06</div>
+            <h3 class="card-title">Snack Tree</h3>
+            <p class="card-description">Data visualization as nature</p>
+            <span class="card-link">Open →</span>
+          </a>
+        </div>
 
-      <div class="project-card">
-        <a href="Project7.html">
-          <div class="project-number">07</div>
-          <h2 class="project-title">Project 7</h2>
-          <p class="project-description">The Light Within</p>
-        </a>
-      </div>
-    </section>
+        <div class="card">
+          <a href="Project7.html">
+            <div class="tag">07</div>
+            <h3 class="card-title">The Light Within</h3>
+            <p class="card-description">An autobiographical journey</p>
+            <span class="card-link">Open →</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="image-strip">
+        <div class="image-strip-item">
+          <img src="assets/me-1.jpg" alt="" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px;\'>Frame</div>';">
+        </div>
+        <div class="image-strip-item">
+          <img src="assets/me-2.jpg" alt="" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px;\'>Frame</div>';">
+        </div>
+        <div class="image-strip-item">
+          <img src="assets/me-3.jpg" alt="" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px;\'>Frame</div>';">
+        </div>
+      </section>
+    </div>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Portfolio</p>
+  <footer class="footer">
+    <p>© Michelle Yang — written like a love letter.</p>
   </footer>
 </body>
 </html>

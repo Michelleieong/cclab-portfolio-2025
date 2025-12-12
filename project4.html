@@ -2,39 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css">
-
   <!-- p5.js libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
-
-  <title>Project 4 – My Portfolio</title>
+  <title>Exquisite Corpse – Michelle Yang</title>
 </head>
-
 <body>
+  <header>
+    <div class="header-content">
+      <div class="logo-text">
+        Michelle Yang / Love Letter <span class="lamb-mark">羊</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="extra.html">Extra</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="extra.html">Extra</a></li>
-      </ul>
-    </nav>
+    <div class="page-wrap">
+      <div class="project-hero">
+        <h1>Exquisite Corpse</h1>
+        <p class="subtitle">Collaborative character creation</p>
+      </div>
 
-    <h1>Exquisite Corpse</h1>
+      <div class="sketch-frame">
+        <div id="sketch-container"></div>
+      </div>
 
-    <h2>p5.js Sketch</h2>
-
-    <!-- Canvas will appear here -->
-    <div id="sketch-container"></div>
-
-    <h2>Description</h2>
-    <p>
-      This project is a collaborative drawing where each group member designed one body part, 
-      and I used code to combine selected parts into a single character.
-    </p>
+      <div class="project-description">
+        <p>This project is a collaborative drawing where each group member designed one body part, and I used code to combine selected parts into a single character.</p>
+      </div>
+    </div>
   </main>
+
+  <footer class="footer">
+    <p>© Michelle Yang — written like a love letter.</p>
+  </footer>
 
   <!-- Your p5 sketch file -->
   <script src="project4.js"></script>
