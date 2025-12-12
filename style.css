@@ -446,6 +446,59 @@ body.home-page .image-strip-item {
   display: inline-block;
 }
 
+/* Sign stamps - small corner stamps */
+.sign-stamp-corner {
+  position: fixed;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.sign-stamp-corner img {
+  max-width: 40px;
+  height: auto;
+  display: block;
+  filter: sepia(10%) contrast(90%);
+}
+
+.sign-stamp-top-left {
+  top: 80px;
+  left: 20px;
+  transform: rotate(-5deg);
+}
+
+.sign-stamp-bottom-right {
+  bottom: 40px;
+  right: 20px;
+  transform: rotate(5deg);
+}
+
+/* Sign stamps - medium size (like sheepwords) */
+.sign-stamp-medium {
+  opacity: 0.7;
+  text-align: center;
+}
+
+.sign-stamp-medium img {
+  max-width: 120px;
+  height: auto;
+  display: inline-block;
+  filter: sepia(10%) contrast(90%);
+}
+
+/* Sign stamp - slightly larger */
+.sign-stamp-large {
+  opacity: 0.7;
+  text-align: center;
+}
+
+.sign-stamp-large img {
+  max-width: 150px;
+  height: auto;
+  display: inline-block;
+  filter: sepia(10%) contrast(90%);
+}
+
 /* Decorative sheep elements */
 .decorative-sheep {
   position: absolute;
