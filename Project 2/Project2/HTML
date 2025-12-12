@@ -2,30 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Project 2 – My Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- p5.js libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+
+  <title>Experimental Clock – My Portfolio</title>
 </head>
+
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="extra.html">Extra</a></li>
-    </ul>
-  </nav>
+  <main>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="extra.html">Extra</a></li>
+      </ul>
+    </nav>
 
-  <h1>Project 2 Title</h1>
+    <h1>Experimental Clock</h1>
 
-  <h2>p5.js Sketch</h2>
- 
-  <div>
-  <iframe src="https://editor.p5js.org/yangm122/full/UYhzlJr4s"></iframe>
+    <h2>p5.js Sketch</h2>
 
-  </div>
+    <!-- Canvas will appear here -->
+    <div id="sketch-container"></div>
 
-  <h2>Description</h2>
-  <p>
-    This is a 1–2 sentence description of Project 1. Describe what it does,
-    what you were exploring, or what you learned.
-  </p>
+    <h2>Description</h2>
+    <p>
+     This project shows time in three cities using overlapping colored arcs instead of clock hands. 
+     I explored how time can feel shared and layered when different places exist in the same visual space.
+    </p>
+  </main>
+
+  <!-- Your p5 sketch file -->
+  <script src="project3.js"></script>
 </body>
 </html>

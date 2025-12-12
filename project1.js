@@ -3,7 +3,6 @@ function setup() {
   canvas = createCanvas(400, 400);
   // attach the canvas to the div in your HTML
   canvas.parent("sketch-container");
-           
 }
 
 function draw() {
@@ -12,7 +11,6 @@ function draw() {
   drawBuidings();
   drawWater();
 }
-
 function drawSky() {
   for (let y = 0; y < height/2; y++) {
     let inter = map(y, 0, height/2, 0, 1);
