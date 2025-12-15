@@ -807,66 +807,23 @@ body.home-page .envelope-image {
   }
 }
 
-/* Zine Scroll Section */
-.zine-scroll-section {
+/* Zine Section */
+.zine-section {
   margin: 100px 0 60px;
   padding: 0;
   width: 100%;
-}
-
-.zine-scroll-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  padding: 40px 0;
-}
-
-.zine-scroll-wrapper::-webkit-scrollbar {
-  height: 12px;
-}
-
-.zine-scroll-wrapper::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 6px;
-}
-
-.zine-scroll-wrapper::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-}
-
-.zine-scroll-wrapper::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.zine-scroll-container {
   display: flex;
-  flex-direction: row;
-  gap: 0;
-  width: fit-content;
-  min-width: 100%;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
 .zine-page {
   display: block;
-  height: auto;
-  max-height: 85vh;
   width: auto;
+  height: auto;
+  max-width: 100%;
   object-fit: contain;
-  flex-shrink: 0;
   margin: 0;
   padding: 0;
-}
-
-@media (max-width: 768px) {
-  .zine-scroll-wrapper {
-    padding: 20px 0;
-  }
-  
-  .zine-page {
-    max-height: 80vh;
-  }
 }
