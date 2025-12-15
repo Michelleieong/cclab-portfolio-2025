@@ -812,57 +812,57 @@ body.home-page .envelope-image {
   margin: 100px 0 60px;
   padding: 0;
   width: 100%;
-  overflow: hidden;
 }
 
-.zine-scroll-container {
+.zine-scroll-wrapper {
   width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   padding: 40px 0;
 }
 
-.zine-scroll-container::-webkit-scrollbar {
-  width: 8px;
+.zine-scroll-wrapper::-webkit-scrollbar {
+  height: 12px;
 }
 
-.zine-scroll-container::-webkit-scrollbar-track {
+.zine-scroll-wrapper::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
-.zine-scroll-container::-webkit-scrollbar-thumb {
+.zine-scroll-wrapper::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
-.zine-scroll-container::-webkit-scrollbar-thumb:hover {
+.zine-scroll-wrapper::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.zine-scroll-content {
+.zine-scroll-container {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
-  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  width: fit-content;
+  min-width: 100%;
+  align-items: flex-start;
 }
 
 .zine-page {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 90vh;
-  object-fit: contain;
   display: block;
+  height: auto;
+  max-height: 85vh;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
-  .zine-scroll-container {
-    max-height: none;
+  .zine-scroll-wrapper {
     padding: 20px 0;
   }
   
