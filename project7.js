@@ -23,8 +23,8 @@ function preload() {
 }
 
 function setup() {
-  // create the canvas
-  canvas = createCanvas(400, 400);
+  // create the canvas - increased size to match image dimensions (600x400)
+  canvas = createCanvas(600, 400);
   // attach the canvas to the div in your HTML
   canvas.parent("sketch-container");
   lightling = new Lightling(100, height/2);
