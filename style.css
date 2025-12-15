@@ -806,3 +806,71 @@ body.home-page .envelope-image {
     gap: 16px;
   }
 }
+
+/* Zine Scroll Section */
+.zine-scroll-section {
+  margin: 100px 0 60px;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.zine-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding: 40px 0;
+}
+
+.zine-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.zine-scroll-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.zine-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.zine-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.zine-scroll-content {
+  display: flex;
+  gap: 0;
+  width: fit-content;
+  min-width: 100%;
+}
+
+.zine-page {
+  height: auto;
+  max-width: none;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Responsive: On smaller screens, allow vertical scroll */
+@media (max-width: 768px) {
+  .zine-scroll-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  
+  .zine-scroll-content {
+    flex-direction: row;
+  }
+  
+  .zine-page {
+    max-height: 80vh;
+    width: auto;
+  }
+}
