@@ -8,98 +8,101 @@
   <style>
     .zine-viewer {
       max-width: 900px;
-      margin: 60px auto;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
     
-    .zine-cover-display {
-      margin-bottom: 60px;
+    .zine-cover-section {
+      margin-bottom: 80px;
       text-align: center;
     }
     
-    .zine-cover-display img {
+    .zine-cover-section img {
       max-width: 100%;
       height: auto;
+      display: block;
+      margin: 0 auto;
       border-radius: 12px;
-      box-shadow: 0 4px 20px var(--shadow);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
     
     .zine-pages-section {
-      margin-top: 80px;
       text-align: center;
+      margin-top: 60px;
     }
     
     .zine-pages-title {
       font-family: 'Special Elite', monospace;
       font-size: 16px;
-      color: var(--text-light);
+      color: #666;
       margin-bottom: 40px;
       letter-spacing: 0.1em;
     }
     
-    .zine-viewer-container {
+    .zine-page-container {
       position: relative;
-      max-width: 100%;
-      margin: 0 auto;
+      min-height: 500px;
+      margin-bottom: 40px;
     }
     
-    .zine-page-display {
+    .zine-page-item {
       display: none;
-      text-align: center;
     }
     
-    .zine-page-display.active {
+    .zine-page-item.active {
       display: block;
     }
     
-    .zine-page-display img {
+    .zine-page-item img {
       max-width: 100%;
       height: auto;
       max-height: 85vh;
+      display: block;
+      margin: 0 auto;
       border-radius: 12px;
-      box-shadow: 0 4px 20px var(--shadow);
-      object-fit: contain;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
     
-    .zine-navigation {
+    .zine-controls {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 30px;
       margin-top: 40px;
-      padding: 20px 0;
+      padding: 30px 0;
     }
     
-    .zine-nav-btn {
-      background-color: rgba(255, 255, 255, 0.8);
-      border: 0.5px solid var(--border-color);
+    .zine-btn {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 0.5px solid #ddd;
       border-radius: 50%;
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 20px;
-      color: var(--text-color);
-      text-decoration: none;
+      font-size: 24px;
+      color: #333;
+      user-select: none;
     }
     
-    .zine-nav-btn:hover {
+    .zine-btn:hover:not(:disabled) {
       transform: scale(1.1);
-      box-shadow: 0 4px 12px var(--shadow);
-      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      background-color: #fff;
     }
     
-    .zine-nav-btn:disabled {
+    .zine-btn:disabled {
       opacity: 0.3;
       cursor: not-allowed;
     }
     
-    .zine-page-indicator {
+    .zine-counter {
       font-family: 'Special Elite', monospace;
       font-size: 14px;
-      color: var(--text-light);
+      color: #666;
       letter-spacing: 0.1em;
     }
   </style>
@@ -128,36 +131,37 @@
       </div>
       
       <div class="zine-viewer">
-        <!-- Cover -->
-        <div class="zine-cover-display">
-          <img src="zinecover.png" alt="Zine Cover">
+        <!-- Cover Image -->
+        <div class="zine-cover-section">
+          <img src="./zinecover.png" alt="Zine Cover" onerror="console.error('Failed to load zinecover.png')">
         </div>
         
-        <!-- Pages -->
+        <!-- Pages Section -->
         <div class="zine-pages-section">
           <div class="zine-pages-title">Pages</div>
           
-          <div class="zine-viewer-container">
-            <div class="zine-page-display active" data-page="0">
-              <img src="zine1.png" alt="Zine page 1">
+          <div class="zine-page-container">
+            <div class="zine-page-item active" data-index="0">
+              <img src="./zine1.png" alt="Zine page 1" onerror="console.error('Failed to load zine1.png')">
             </div>
-            <div class="zine-page-display" data-page="1">
-              <img src="zine2.png" alt="Zine page 2">
+            <div class="zine-page-item" data-index="1">
+              <img src="./zine2.png" alt="Zine page 2" onerror="console.error('Failed to load zine2.png')">
             </div>
-            <div class="zine-page-display" data-page="2">
-              <img src="zine3.png" alt="Zine page 3">
+            <div class="zine-page-item" data-index="2">
+              <img src="./zine3.png" alt="Zine page 3" onerror="console.error('Failed to load zine3.png')">
             </div>
-            <div class="zine-page-display" data-page="3">
-              <img src="zine4.png" alt="Zine page 4">
+            <div class="zine-page-item" data-index="3">
+              <img src="./zine4.png" alt="Zine page 4" onerror="console.error('Failed to load zine4.png')">
             </div>
           </div>
           
-          <div class="zine-navigation">
-            <button class="zine-nav-btn" id="prevBtn" onclick="changePage(-1)">←</button>
-            <span class="zine-page-indicator">
-              <span id="currentPage">1</span> / <span id="totalPages">4</span>
+          <!-- Navigation Controls -->
+          <div class="zine-controls">
+            <button class="zine-btn" id="prevBtn" onclick="previousPage()">←</button>
+            <span class="zine-counter">
+              <span id="pageNum">1</span> / <span id="totalPages">4</span>
             </span>
-            <button class="zine-nav-btn" id="nextBtn" onclick="changePage(1)">→</button>
+            <button class="zine-btn" id="nextBtn" onclick="nextPage()">→</button>
           </div>
         </div>
       </div>
@@ -173,46 +177,53 @@
   </footer>
 
   <script>
-    let currentPageIndex = 0;
+    let currentPage = 0;
     const totalPages = 4;
     
-    function showPage(index) {
+    function updateDisplay() {
       // Hide all pages
-      const pages = document.querySelectorAll('.zine-page-display');
-      pages.forEach(page => page.classList.remove('active'));
+      const pages = document.querySelectorAll('.zine-page-item');
+      pages.forEach((page, index) => {
+        if (index === currentPage) {
+          page.classList.add('active');
+        } else {
+          page.classList.remove('active');
+        }
+      });
       
-      // Show current page
-      if (pages[index]) {
-        pages[index].classList.add('active');
-      }
+      // Update counter
+      document.getElementById('pageNum').textContent = currentPage + 1;
       
-      // Update indicator
-      document.getElementById('currentPage').textContent = index + 1;
-      
-      // Update button states
-      document.getElementById('prevBtn').disabled = index === 0;
-      document.getElementById('nextBtn').disabled = index === totalPages - 1;
+      // Update buttons
+      document.getElementById('prevBtn').disabled = currentPage === 0;
+      document.getElementById('nextBtn').disabled = currentPage === totalPages - 1;
     }
     
-    function changePage(direction) {
-      const newIndex = currentPageIndex + direction;
-      if (newIndex >= 0 && newIndex < totalPages) {
-        currentPageIndex = newIndex;
-        showPage(currentPageIndex);
+    function nextPage() {
+      if (currentPage < totalPages - 1) {
+        currentPage++;
+        updateDisplay();
       }
     }
     
-    // Initialize
-    showPage(0);
+    function previousPage() {
+      if (currentPage > 0) {
+        currentPage--;
+        updateDisplay();
+      }
+    }
     
     // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'ArrowLeft') {
-        changePage(-1);
-      } else if (e.key === 'ArrowRight') {
-        changePage(1);
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowLeft') {
+        previousPage();
+      } else if (event.key === 'ArrowRight') {
+        nextPage();
       }
     });
+    
+    // Initialize
+    updateDisplay();
   </script>
 </body>
 </html>
