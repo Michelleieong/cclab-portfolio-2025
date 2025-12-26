@@ -762,6 +762,12 @@ body.home-page .envelope-image {
   margin-top: 40px;
 }
 
+.archive-item-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .archive-item {
   aspect-ratio: 1;
   border: 0.5px solid var(--border-color);
@@ -770,9 +776,10 @@ body.home-page .envelope-image {
   background-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 2px 8px var(--shadow);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.archive-item:hover {
+.archive-item-link:hover .archive-item {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px var(--shadow);
   border-color: var(--accent);
@@ -783,6 +790,11 @@ body.home-page .envelope-image {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.archive-item.zine-cover img {
+  object-fit: contain;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .archive-item-empty {
@@ -807,23 +819,3 @@ body.home-page .envelope-image {
   }
 }
 
-/* Zine Section */
-.zine-section {
-  margin: 100px 0 60px;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-}
-
-.zine-page {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-  margin: 0;
-  padding: 0;
-}
