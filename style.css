@@ -391,6 +391,13 @@ body.home-page .image-strip-item {
   object-fit: contain;
 }
 
+.nav-icon {
+  font-size: 24px;
+  color: var(--text-color);
+  font-weight: 300;
+  text-decoration: none;
+}
+
 .nav-icon-next {
   right: 24px;
   bottom: 24px;
@@ -750,9 +757,29 @@ body.home-page .envelope-image {
   padding: 80px 40px;
 }
 
+.archive-logo {
+  text-align: center;
+  margin-bottom: 40px;
+  opacity: 0.8;
+}
+
+.archive-logo img {
+  max-width: 100px;
+  height: auto;
+  display: inline-block;
+}
+
 .archive-title {
   text-align: center;
   margin-bottom: 60px;
+}
+
+.archive-title h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--text-color);
+  letter-spacing: 0.05em;
 }
 
 .archive-category {
@@ -839,6 +866,92 @@ body.home-page .envelope-image {
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.4);
+}
+
+/* Kiiikiii Style Items List */
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.item-entry {
+  width: 100%;
+}
+
+.item-link {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-decoration: none;
+  color: inherit;
+  padding: 20px;
+  border: 0.5px solid transparent;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.item-link:hover {
+  border-color: var(--border-color);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.item-image {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border: 0.5px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.item-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .item-link {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .item-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
 }
 
 @media (max-width: 768px) {
