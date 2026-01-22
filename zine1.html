@@ -5,6 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zine 作品1 — woolyspace</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .zine-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      margin: 60px 0;
+      padding: 40px 20px;
+      width: 100%;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .zine-image {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      background-color: #fff;
+    }
+
+    .zine-image:first-child {
+      margin-top: 0;
+    }
+
+    .zine-image:last-child {
+      margin-bottom: 0;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -30,11 +62,11 @@
       </div>
       
       <div class="zine-gallery">
-        <img src="zinecover.png" alt="Zine Cover" class="zine-image">
-        <img src="zine1.png" alt="Zine page 1" class="zine-image">
-        <img src="zine2.png" alt="Zine page 2" class="zine-image">
-        <img src="zine3.png" alt="Zine page 3" class="zine-image">
-        <img src="zine4.png" alt="Zine page 4" class="zine-image">
+        <img src="./zinecover.png" alt="Zine Cover" class="zine-image" onerror="console.error('Failed to load zinecover.png'); this.style.display='none';">
+        <img src="./zine1.png" alt="Zine page 1" class="zine-image" onerror="console.error('Failed to load zine1.png'); this.style.display='none';">
+        <img src="./zine2.png" alt="Zine page 2" class="zine-image" onerror="console.error('Failed to load zine2.png'); this.style.display='none';">
+        <img src="./zine3.png" alt="Zine page 3" class="zine-image" onerror="console.error('Failed to load zine3.png'); this.style.display='none';">
+        <img src="./zine4.png" alt="Zine page 4" class="zine-image" onerror="console.error('Failed to load zine4.png'); this.style.display='none';">
       </div>
       
       <div class="project-description" style="margin-top: 60px;">
@@ -48,4 +80,3 @@
   </footer>
 </body>
 </html>
-
