@@ -2,7 +2,7 @@ let img;
 let canvas;
 
 function preload() {
-  img = loadImage('moire_animation_cat.webp');
+  img = loadImage('moire_animation_cat.webp'); 
 }
 
 function setup() {
@@ -15,14 +15,14 @@ function draw() {
   image(img, 0, 0, width, height);
   drawMouseMask();
 
-  textSize(50);
+   textSize(50);
   text("slide mouse", 200, height - 100);
 }
 
 function drawMouseMask() {
-  push();
+ push();
   noStroke();
-  translate(mouseX - 300, mouseY - 300);
+  translate(mouseX - 300, mouseY - 300); 
   for (let x = 0; x < width * 3; x += 10) {
     if ((x / 30) % 2 == 0) fill(mouseX - 150, mouseX, mouseY, 180);
     else fill(mouseX - 150, mouseY - 100, mouseX, 220);
