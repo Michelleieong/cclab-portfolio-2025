@@ -170,7 +170,7 @@ nav a:hover::after {
 }
 
 /* Main Content - Using CSS Grid */
-main {
+main:not(.envelope-landing) {
   margin-top: 80px;
   padding: 80px 0;
   min-height: calc(100vh - 200px);
@@ -712,7 +712,7 @@ body.home-page .decorative-sheep-2 {
 }
 
 /* Legacy support for existing pages */
-main {
+main:not(.envelope-landing) {
   position: relative;
   z-index: 1;
 }
@@ -725,15 +725,17 @@ canvas {
 
 /* Envelope Landing Page - Full Screen Envelope */
 .envelope-landing {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  place-items: center;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  background: linear-gradient(180deg, var(--angel-blue-light) 0%, var(--angel-blue) 50%, var(--angel-blue-dark) 100%);
-  background-attachment: fixed;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: 1fr !important;
+  place-items: center !important;
+  min-height: 100vh !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: linear-gradient(180deg, var(--angel-blue-light) 0%, var(--angel-blue) 50%, var(--angel-blue-dark) 100%) !important;
+  background-attachment: fixed !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .envelope-link {
@@ -757,17 +759,19 @@ canvas {
   width: 100%;
   filter: drop-shadow(0 12px 32px rgba(135, 206, 235, 0.2));
   transition: filter 0.3s ease;
+  display: block !important;
+}
+
+.envelope-image-large img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
 }
 
 .envelope-link:hover .envelope-image-large {
   filter: drop-shadow(0 16px 40px rgba(135, 206, 235, 0.3));
 }
 
-.envelope-image-large img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 /* Envelope Cover Page - CSS Grid (for other uses) */
 .envelope-hero {
