@@ -179,7 +179,7 @@ main {
   gap: 0;
 }
 
-/* Home page main layout - CSS Grid */
+/* Home page main layout - CSS Grid (for main.html) */
 body.home-page main {
   display: grid;
   grid-template-rows: auto auto auto;
@@ -188,6 +188,22 @@ body.home-page main {
     "projects"
     "images";
   gap: 60px;
+}
+
+/* Remove header and footer margin for envelope landing */
+body.home-page .envelope-landing {
+  margin-top: 0;
+}
+
+/* About page - no header/footer */
+body:has(.letter-container) {
+  margin: 0;
+  padding: 0;
+}
+
+body:has(.letter-container) main {
+  margin-top: 0;
+  padding: 0;
 }
 
 /* Hero Section */
@@ -693,7 +709,53 @@ canvas {
   margin: 0 auto;
 }
 
-/* Envelope Cover Page - CSS Grid */
+/* Envelope Landing Page - Full Screen Envelope */
+.envelope-landing {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(180deg, var(--angel-blue-light) 0%, var(--angel-blue) 50%, var(--angel-blue-dark) 100%);
+  background-attachment: fixed;
+}
+
+.envelope-link {
+  text-decoration: none;
+  color: inherit;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  place-items: center;
+  gap: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.envelope-link:hover {
+  transform: scale(1.05);
+}
+
+.envelope-image-large {
+  max-width: 600px;
+  width: 100%;
+  filter: drop-shadow(0 12px 32px rgba(135, 206, 235, 0.2));
+  transition: filter 0.3s ease;
+}
+
+.envelope-link:hover .envelope-image-large {
+  filter: drop-shadow(0 16px 40px rgba(135, 206, 235, 0.3));
+}
+
+.envelope-image-large img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Envelope Cover Page - CSS Grid (for other uses) */
 .envelope-hero {
   grid-area: envelope;
   display: grid;
@@ -740,16 +802,17 @@ body.home-page .envelope-image {
   max-width: 700px;
   margin: 0 auto;
   padding: 100px 40px;
-  text-align: left;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
   gap: 40px;
   grid-template-areas:
     "stamp"
     "greeting"
     "body"
     "signature";
+  align-content: center;
 }
 
 .letter-stamp {
@@ -813,13 +876,18 @@ body.home-page .envelope-image {
 }
 
 .letter-signature {
+  grid-area: signature;
   font-family: 'Special Elite', 'Courier New', monospace;
   font-size: 18px;
-  margin-top: 80px;
+  margin-top: 0;
   text-align: right;
   color: var(--text-color);
   letter-spacing: 0.05em;
   font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
 }
 
 .sheep-stamp {
@@ -833,6 +901,25 @@ body.home-page .envelope-image {
   height: auto;
   display: inline-block;
   filter: sepia(10%) contrast(90%);
+}
+
+/* Clickable sheep stamp link */
+.sheep-stamp-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin-top: 20px;
+}
+
+.sheep-stamp-link:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.sheep-stamp-link .sheep-stamp {
+  margin-top: 0;
+  cursor: pointer;
 }
 
 /* Extra Page - Visual Archive / Gallery with CSS Grid */
