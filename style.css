@@ -654,9 +654,15 @@ body.home-page .decorative-sheep-2 {
   }
 
   .header-content {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "logo"
+      "nav";
     gap: 16px;
-    align-items: flex-start;
+  }
+
+  nav {
+    justify-self: start;
   }
 
   nav ul {
@@ -666,6 +672,14 @@ body.home-page .decorative-sheep-2 {
   main {
     margin-top: 100px;
     padding: 40px 0;
+  }
+
+  .envelope-image-large {
+    max-width: 90%;
+  }
+
+  .letter-container {
+    padding: 60px 24px;
   }
 
   .hero {
