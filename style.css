@@ -95,17 +95,26 @@ header {
 .header-content {
   max-width: 980px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "logo nav";
+  gap: 40px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo-text {
+  grid-area: logo;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.1em;
   color: var(--text-color);
+}
+
+nav {
+  grid-area: nav;
+  justify-self: end;
 }
 
 .lamb-mark {
@@ -160,11 +169,25 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Main Content */
+/* Main Content - Using CSS Grid */
 main {
   margin-top: 80px;
   padding: 80px 0;
   min-height: calc(100vh - 200px);
+  display: grid;
+  grid-template-rows: auto;
+  gap: 0;
+}
+
+/* Home page main layout - CSS Grid */
+body.home-page main {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+    "envelope"
+    "projects"
+    "images";
+  gap: 60px;
 }
 
 /* Hero Section */
@@ -174,9 +197,14 @@ main {
   padding: 60px 0;
 }
 
-/* Projects Grid Section (for non-cover pages) */
+/* Projects Grid Section - CSS Grid */
 .projects-section {
-  margin-top: 80px;
+  grid-area: projects;
+  margin-top: 0;
+}
+
+body.home-page .projects-section {
+  margin-top: 0;
 }
 
 .hero h1 {
@@ -209,12 +237,22 @@ main {
   color: var(--text-color);
 }
 
-/* Grid */
+/* Grid - Enhanced CSS Grid Layout */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
+  margin: 0;
+  width: 100%;
+}
+
+/* Works Grid - For CC Lab and Advanced CC Lab pages */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
   margin: 60px 0;
+  width: 100%;
 }
 
 /* Card */
@@ -327,13 +365,23 @@ body.home-page .card {
   box-shadow: 0 4px 16px var(--shadow);
 }
 
-/* Image Strip */
+/* Image Strip - CSS Grid */
 .image-strip {
-  display: flex;
+  grid-area: images;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin: 80px 0;
-  overflow-x: auto;
+  margin: 0;
   padding: 20px 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .image-strip {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 
 .image-strip-item {
@@ -645,12 +693,13 @@ canvas {
   margin: 0 auto;
 }
 
-/* Envelope Cover Page */
+/* Envelope Cover Page - CSS Grid */
 .envelope-hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  grid-area: envelope;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  place-items: center;
   min-height: 70vh;
   padding: 120px 40px;
   text-align: center;
@@ -686,12 +735,48 @@ body.home-page .envelope-image {
   font-style: italic;
 }
 
-/* About Page - Love Letter Style (All Handwritten/Typewriter) */
+/* About Page - Love Letter Style with CSS Grid */
 .letter-container {
   max-width: 700px;
   margin: 0 auto;
   padding: 100px 40px;
   text-align: left;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 40px;
+  grid-template-areas:
+    "stamp"
+    "greeting"
+    "body"
+    "signature";
+}
+
+.letter-stamp {
+  grid-area: stamp;
+  justify-self: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.letter-stamp img {
+  max-width: 120px;
+  height: auto;
+  display: inline-block;
+  filter: sepia(10%) contrast(90%);
+  opacity: 0.7;
+}
+
+.letter-greeting {
+  grid-area: greeting;
+}
+
+.letter-body {
+  grid-area: body;
+}
+
+.letter-signature {
+  grid-area: signature;
 }
 
 .letter-greeting {
@@ -750,16 +835,25 @@ body.home-page .envelope-image {
   filter: sepia(10%) contrast(90%);
 }
 
-/* Extra Page - Visual Archive / Gallery */
+/* Extra Page - Visual Archive / Gallery with CSS Grid */
 .archive-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 80px 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 40px;
+  grid-template-areas:
+    "logo"
+    "title"
+    "items";
 }
 
 .archive-logo {
+  grid-area: logo;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 0;
   opacity: 0.8;
 }
 
@@ -770,8 +864,9 @@ body.home-page .envelope-image {
 }
 
 .archive-title {
+  grid-area: title;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 0;
 }
 
 .archive-title h1 {
@@ -868,12 +963,13 @@ body.home-page .envelope-image {
   background: rgba(255, 255, 255, 0.4);
 }
 
-/* Kiiikiii Style Items List */
+/* Kiiikiii Style Items List - CSS Grid */
 .items-list {
-  display: flex;
-  flex-direction: column;
+  grid-area: items;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 0;
 }
 
 .item-entry {
