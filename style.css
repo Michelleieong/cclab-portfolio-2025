@@ -972,6 +972,30 @@ body.home-page .envelope-image {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
+.zine-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 1100px;
+  margin: 100px auto;
+}
+
+.spread {
+  display: flex;
+  gap: 20px;
+}
+
+.spread img {
+  width: 50%;
+  height: auto;
+}
+
+.single-page img {
+  width: 100%;
+  height: auto;
+}
+
+
 @media (max-width: 768px) {
   .zine-gallery {
     gap: 30px;
