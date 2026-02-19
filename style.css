@@ -995,6 +995,10 @@ body.home-page .envelope-image {
   height: auto;
 }
 
+.spread img {
+  width: 50%;
+  margin: 0;
+}
 
 @media (max-width: 768px) {
   .zine-gallery {
