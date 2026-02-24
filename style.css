@@ -211,7 +211,7 @@ main:not(.envelope-landing) {
 }
 
 .envelope-image-large {
-  max-width: 600px;
+  max-width: 720px;
   width: 90%;
   filter: drop-shadow(0 12px 32px rgba(135, 206, 235, 0.2));
   transition: filter 0.3s ease;
