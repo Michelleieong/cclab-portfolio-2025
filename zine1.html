@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zine 作品1 — woolyspace</title>
+  <title>Zine 1 — woolyspace</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     .zine-gallery-container {
@@ -73,16 +73,6 @@
   </footer>
 
   <script>
-    // Debug: Check if images are loading
-    document.addEventListener('DOMContentLoaded', function() {
-      const images = document.querySelectorAll('.zine-gallery-container img');
-      images.forEach((img, index) => {
-        img.onload = function() {
-          console.log('Image loaded:', img.src);
-        };
-        img.onerror = function() {
-          console.error('Image failed to load:', img.src);
-          alert('Failed to load image: ' + img.src);
         };
       });
     });
