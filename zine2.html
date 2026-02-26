@@ -6,28 +6,145 @@
   <title>Zine 作品2 — woolyspace</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .zine-gallery-container {
+    .zine-viewer-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 50px;
-      margin: 60px auto;
+      justify-content: center;
+      min-height: 80vh;
       padding: 40px 20px;
-      width: 100%;
-      max-width: 1000px;
+      perspective: 2000px;
     }
 
-    .zine-gallery-container img {
+    .book-container {
+      position: relative;
       width: 100%;
-      max-width: 900px;
-      height: auto;
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      background-color: #fff;
+      max-width: 1400px;
+      height: 90vh;
+      max-height: 900px;
       margin: 0 auto;
+    }
+
+    .book-page {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transform-origin: left center;
+      backface-visibility: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .book-page.cover {
+      width: 100%;
+      left: 0;
+      background-image: url('zine2Cover.png');
+      z-index: 10;
+    }
+
+    .book-page.cover.flipped {
+      transform: rotateY(-180deg);
+      z-index: 1;
+    }
+
+    .book-page.left {
+      left: 0;
+      transform-origin: right center;
+    }
+
+    .book-page.right {
+      right: 0;
+      transform-origin: left center;
+    }
+
+    .book-page.left.flipped {
+      transform: rotateY(-180deg);
+    }
+
+    .book-page.right.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .book-page.back {
+      width: 100%;
+      left: 0;
+      background-image: url('zine2Back.png');
+      z-index: 1;
+    }
+
+    .book-page.back.visible {
+      z-index: 10;
+    }
+
+    .page-pair {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    .page-pair.active {
+      display: block;
+    }
+
+    .page-pair .left {
+      background-image: url('');
+    }
+
+    .page-pair .right {
+      background-image: url('');
+    }
+
+    .page-pair-1 .left {
+      background-image: url('zine2-1.png');
+    }
+
+    .page-pair-1 .right {
+      background-image: url('zine2-2.png');
+    }
+
+    .page-pair-2 .left {
+      background-image: url('zine2-3.png');
+    }
+
+    .page-pair-2 .right {
+      background-image: url('zine2-4.png');
+    }
+
+    .page-pair-3 .left {
+      background-image: url('zine2-5.png');
+    }
+
+    .page-pair-3 .right {
+      background-image: url('zine2-6.png');
+    }
+
+    .navigation-hint {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(44, 44, 44, 0.6);
+      font-family: 'Special Elite', monospace;
+      font-size: 14px;
+      pointer-events: none;
+      z-index: 100;
+      transition: opacity 0.3s;
+    }
+
+    .navigation-hint.hidden {
+      opacity: 0;
+    }
+
+    @media (max-width: 768px) {
+      .book-container {
+        height: 70vh;
+        max-height: 600px;
+      }
     }
   </style>
 </head>
@@ -54,8 +171,34 @@
         <p class="subtitle">Visual pages</p>
       </div>
       
-      <div class="zine-gallery-container">
-        <iframe src="assets/Me_zineRevise.pdf" width="100%" height="1200px" style="border: none; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); min-height: 1200px;"></iframe>
+      <div class="zine-viewer-container">
+        <div class="book-container">
+          <!-- Cover -->
+          <div class="book-page cover" id="cover"></div>
+          
+          <!-- Page Pair 1: zine2-1 and zine2-2 -->
+          <div class="page-pair page-pair-1" id="pair1">
+            <div class="book-page left" id="page1"></div>
+            <div class="book-page right" id="page2"></div>
+          </div>
+          
+          <!-- Page Pair 2: zine2-3 and zine2-4 -->
+          <div class="page-pair page-pair-2" id="pair2">
+            <div class="book-page left" id="page3"></div>
+            <div class="book-page right" id="page4"></div>
+          </div>
+          
+          <!-- Page Pair 3: zine2-5 and zine2-6 -->
+          <div class="page-pair page-pair-3" id="pair3">
+            <div class="book-page left" id="page5"></div>
+            <div class="book-page right" id="page6"></div>
+          </div>
+          
+          <!-- Back Cover -->
+          <div class="book-page back" id="back"></div>
+          
+          <div class="navigation-hint" id="hint">Click to turn page</div>
+        </div>
       </div>
       
       <div class="project-description" style="margin-top: 60px;">
@@ -69,19 +212,87 @@
   </footer>
 
   <script>
-    // Debug: Check if images are loading
-    document.addEventListener('DOMContentLoaded', function() {
-      const images = document.querySelectorAll('.zine-gallery-container img');
-      images.forEach((img, index) => {
-        img.onload = function() {
-          console.log('Image loaded:', img.src);
-        };
-        img.onerror = function() {
-          console.error('Image failed to load:', img.src);
-        };
-      });
+    let currentState = 'cover'; // cover -> pair1 -> pair2 -> pair3 -> back
+    
+    const cover = document.getElementById('cover');
+    const pair1 = document.getElementById('pair1');
+    const pair2 = document.getElementById('pair2');
+    const pair3 = document.getElementById('pair3');
+    const back = document.getElementById('back');
+    const hint = document.getElementById('hint');
+    
+    const page1 = document.getElementById('page1');
+    const page2 = document.getElementById('page2');
+    const page3 = document.getElementById('page3');
+    const page4 = document.getElementById('page4');
+    const page5 = document.getElementById('page5');
+    const page6 = document.getElementById('page6');
+    
+    function nextPage() {
+      switch(currentState) {
+        case 'cover':
+          // Flip cover and show pair1
+          cover.classList.add('flipped');
+          setTimeout(() => {
+            cover.style.display = 'none';
+            pair1.classList.add('active');
+            currentState = 'pair1';
+            hint.textContent = 'Click to turn page';
+          }, 400);
+          break;
+          
+        case 'pair1':
+          // Flip page1 (left) and page2 (right)
+          page1.classList.add('flipped');
+          page2.classList.add('flipped');
+          setTimeout(() => {
+            pair1.classList.remove('active');
+            pair2.classList.add('active');
+            currentState = 'pair2';
+          }, 400);
+          break;
+          
+        case 'pair2':
+          // Flip page3 (left) and page4 (right)
+          page3.classList.add('flipped');
+          page4.classList.add('flipped');
+          setTimeout(() => {
+            pair2.classList.remove('active');
+            pair3.classList.add('active');
+            currentState = 'pair3';
+          }, 400);
+          break;
+          
+        case 'pair3':
+          // Flip page5 (left) and page6 (right), then show back
+          page5.classList.add('flipped');
+          page6.classList.add('flipped');
+          setTimeout(() => {
+            pair3.classList.remove('active');
+            back.classList.add('visible');
+            currentState = 'back';
+            hint.classList.add('hidden');
+          }, 400);
+          break;
+          
+        case 'back':
+          // End of book
+          break;
+      }
+    }
+    
+    // Click handler for the book container
+    const bookContainer = document.querySelector('.book-container');
+    bookContainer.addEventListener('click', function(e) {
+      if (currentState !== 'back') {
+        nextPage();
+      }
+    });
+    
+    // Hide hint after first click
+    cover.addEventListener('click', function() {
+      hint.classList.add('hidden');
     });
   </script>
 </body>
 </html>
-
