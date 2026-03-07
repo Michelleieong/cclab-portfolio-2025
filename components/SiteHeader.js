@@ -3,9 +3,8 @@ import Link from "next/link";
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/main", label: "Main" },
-  { href: "/cclab-works", label: "CC Lab" },
-  { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
 ];
 
 export default function SiteHeader() {
