@@ -12,6 +12,13 @@ export default function WorkPage() {
   return (
     <PageShell footerLinks={footerLinks}>
       <div className="archive-container">
+        <div className="sign-stamp-corner sign-stamp-top-left">
+          <img src={asset("/assets/sign1.png")} alt="Sign stamp" />
+        </div>
+        <div className="sign-stamp-corner sign-stamp-bottom-right">
+          <img src={asset("/assets/sign1.png")} alt="Sign stamp" />
+        </div>
+
         <div className="archive-logo">
           <img src={asset("/assets/sheepwords.png")} alt="woolyspace" />
         </div>
