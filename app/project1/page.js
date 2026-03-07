@@ -1,6 +1,6 @@
 import ProjectPage from "../../components/ProjectPage";
 import Project1Canvas from "../../components/sketches/Project1Canvas";
-import { aboutNavItems, projectPages } from "../../lib/site-data";
+import { projectPages } from "../../lib/site-data";
 
 const page = projectPages.project1;
 
@@ -11,7 +11,6 @@ export const metadata = {
 export default function ProjectOnePage() {
   return (
     <ProjectPage
-      navItems={aboutNavItems}
       title={page.title}
       subtitle={page.subtitle}
       description={page.description}

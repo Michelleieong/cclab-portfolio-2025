@@ -1,6 +1,6 @@
 import EmbeddedSketch from "../../components/EmbeddedSketch";
 import ProjectPage from "../../components/ProjectPage";
-import { aboutNavItems, projectPages } from "../../lib/site-data";
+import { projectPages } from "../../lib/site-data";
 
 const page = projectPages.project7;
 
@@ -11,7 +11,6 @@ export const metadata = {
 export default function ProjectSevenPage() {
   return (
     <ProjectPage
-      navItems={aboutNavItems}
       title={page.title}
       subtitle={page.subtitle}
       description={page.description}

@@ -2,7 +2,7 @@ import { asset } from "../../lib/asset";
 import Link from "next/link";
 
 import PageShell from "../../components/PageShell";
-import { footerLinks, homeNavItems, mainCards } from "../../lib/site-data";
+import { footerLinks, mainCards } from "../../lib/site-data";
 
 export const metadata = {
   title: "Main — woolyspace",
@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function MainPage() {
   return (
-    <PageShell navItems={homeNavItems} footerLinks={footerLinks} mainClassName="main-page-grid">
+    <PageShell footerLinks={footerLinks} mainClassName="main-page-grid">
       <div className="page-wrap">
         <section className="projects-section">
           <div className="works-grid">

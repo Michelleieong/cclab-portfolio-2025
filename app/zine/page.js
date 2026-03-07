@@ -3,7 +3,7 @@ import Link from "next/link";
 import PageShell from "../../components/PageShell";
 import ProjectHero from "../../components/ProjectHero";
 import ZineViewer from "../../components/ZineViewer";
-import { aboutNavItems, zinePages } from "../../lib/site-data";
+import { zinePages } from "../../lib/site-data";
 
 export const metadata = {
   title: "Zine — woolyspace",
@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function ZinePage() {
   return (
-    <PageShell navItems={aboutNavItems}>
+    <PageShell>
       <div className="page-wrap">
         <ProjectHero title="Zine" subtitle="Visual pages" />
         <ZineViewer

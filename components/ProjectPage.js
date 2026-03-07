@@ -3,7 +3,6 @@ import ProjectHero from "./ProjectHero";
 import ProjectNavigation from "./ProjectNavigation";
 
 export default function ProjectPage({
-  navItems,
   footerLinks = [],
   title,
   subtitle,
@@ -12,7 +11,7 @@ export default function ProjectPage({
   navigation = {},
 }) {
   return (
-    <PageShell navItems={navItems} footerLinks={footerLinks}>
+    <PageShell footerLinks={footerLinks}>
       <div className="page-wrap">
         <ProjectHero title={title} subtitle={subtitle} />
         {children}
