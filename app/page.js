@@ -1,16 +1,18 @@
-import LegacyPage from "../components/LegacyPage";
-import { getLegacyPage } from "../lib/legacy-site";
+import Link from "next/link";
 
-export async function generateMetadata() {
-  const page = await getLegacyPage("");
+export const metadata = {
+  title: "woolyspace — a love letter",
+};
 
-  return {
-    title: page?.title ?? "woolyspace",
-  };
-}
-
-export default async function HomePage() {
-  const page = await getLegacyPage("");
-
-  return <LegacyPage page={page} />;
+export default function HomePage() {
+  return (
+    <main className="envelope-landing">
+      <Link href="/about" className="envelope-link">
+        <div className="envelope-image-large">
+          <img src="/assets/envolope.png" alt="Envelope" />
+        </div>
+        <p className="envelope-subtitle">a love letter from wooly space</p>
+      </Link>
+    </main>
+  );
 }
