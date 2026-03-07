@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { asset } from "../lib/asset";
 
 export default function ArchiveList({ items }) {
   return (
@@ -7,7 +8,7 @@ export default function ArchiveList({ items }) {
         <div className="item-entry" key={item.href}>
           <Link href={item.href} className="item-link">
             <div className="item-image">
-              <img src={item.image} alt={item.imageAlt} />
+              <img src={asset(item.image)} alt={item.imageAlt} />
             </div>
             <div className="item-info">
               <h2 className="item-title">{item.title}</h2>

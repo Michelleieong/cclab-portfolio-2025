@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { asset } from "../lib/asset";
 
 export default function ZineBook({ coverImage, backImage, pagePairs }) {
   const states = useMemo(
@@ -21,10 +22,8 @@ export default function ZineBook({ coverImage, backImage, pagePairs }) {
     <div className="zine-viewer-container">
       <div className="book-container" onClick={nextPage}>
         <div
-          className={`book-page cover ${currentState !== "cover" ? "flipped" : ""} ${
-            currentState === "cover" ? "" : "book-page-hidden"
-          }`}
-          style={{ backgroundImage: `url('${coverImage}')` }}
+          className={`book-page cover ${currentState !== "cover" ? "flipped book-page-hidden" : ""}`}
+          style={{ backgroundImage: `url('${asset(coverImage)}')` }}
         />
 
         {pagePairs.map((pair, index) => (
@@ -34,18 +33,18 @@ export default function ZineBook({ coverImage, backImage, pagePairs }) {
           >
             <div
               className={`book-page left ${activePairIndex > index ? "flipped" : ""}`}
-              style={{ backgroundImage: `url('${pair.left}')` }}
+              style={{ backgroundImage: `url('${asset(pair.left)}')` }}
             />
             <div
               className={`book-page right ${activePairIndex > index ? "flipped" : ""}`}
-              style={{ backgroundImage: `url('${pair.right}')` }}
+              style={{ backgroundImage: `url('${asset(pair.right)}')` }}
             />
           </div>
         ))}
 
         <div
           className={`book-page back ${currentState === "back" ? "visible" : ""}`}
-          style={{ backgroundImage: `url('${backImage}')` }}
+          style={{ backgroundImage: `url('${asset(backImage)}')` }}
         />
 
         <div className={`navigation-hint ${currentIndex > 0 ? "hidden" : ""}`}>

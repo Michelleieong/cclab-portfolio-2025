@@ -1,3 +1,4 @@
+import { asset } from "../../lib/asset";
 import Link from "next/link";
 
 export const metadata = {
@@ -10,7 +11,7 @@ export default function AboutPage() {
       <div className="page-wrap">
         <div className="letter-container">
           <div className="letter-stamp">
-            <img src="/assets/sign3.png" alt="Sign decoration" />
+            <img src={asset("/assets/sign3.png")} alt="Sign decoration" />
           </div>
 
           <p className="letter-greeting">Dear Reader,</p>
@@ -48,7 +49,7 @@ export default function AboutPage() {
             </p>
             <Link href="/main" className="sheep-stamp-link">
               <div className="sheep-stamp">
-                <img src="/assets/sheepwords.png" alt="Sheepwords stamp" />
+                <img src={asset("/assets/sheepwords.png")} alt="Sheepwords stamp" />
               </div>
             </Link>
           </div>

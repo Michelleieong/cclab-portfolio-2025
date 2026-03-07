@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { asset } from "../lib/asset";
 
 export default function ZineViewer({ coverImage, pages }) {
   const [currentPage, setCurrentPage] = useState(0);
@@ -10,12 +11,10 @@ export default function ZineViewer({ coverImage, pages }) {
       if (event.key === "ArrowLeft") {
         setCurrentPage((value) => Math.max(0, value - 1));
       }
-
       if (event.key === "ArrowRight") {
         setCurrentPage((value) => Math.min(pages.length - 1, value + 1));
       }
     }
-
     document.addEventListener("keydown", onKeyDown);
     return () => {
       document.removeEventListener("keydown", onKeyDown);
@@ -25,7 +24,7 @@ export default function ZineViewer({ coverImage, pages }) {
   return (
     <div className="zine-viewer">
       <div className="zine-cover-section">
-        <img src={coverImage.src} alt={coverImage.alt} />
+        <img src={asset(coverImage.src)} alt={coverImage.alt} />
       </div>
 
       <div className="zine-pages-section">
@@ -37,7 +36,7 @@ export default function ZineViewer({ coverImage, pages }) {
               key={page.src}
               className={`zine-page-item ${index === currentPage ? "active" : ""}`}
             >
-              <img src={page.src} alt={page.alt} />
+              <img src={asset(page.src)} alt={page.alt} />
             </div>
           ))}
         </div>

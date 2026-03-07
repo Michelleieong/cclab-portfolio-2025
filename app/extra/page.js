@@ -1,3 +1,5 @@
+import { asset } from "../../lib/asset";
+
 import PageShell from "../../components/PageShell";
 import ArchiveList from "../../components/ArchiveList";
 import { extraItems, footerLinks, homeNavItems } from "../../lib/site-data";
@@ -11,7 +13,7 @@ export default function ExtraPage() {
     <PageShell navItems={homeNavItems} footerLinks={footerLinks}>
       <div className="archive-container">
         <div className="archive-logo">
-          <img src="/assets/sheepwords.png" alt="woolyspace" />
+          <img src={asset("/assets/sheepwords.png")} alt="woolyspace" />
         </div>
 
         <div className="archive-title">
