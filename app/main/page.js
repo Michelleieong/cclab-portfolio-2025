@@ -1,8 +1,7 @@
 import { asset } from "../../lib/asset";
-import Link from "next/link";
 
 import PageShell from "../../components/PageShell";
-import { footerLinks, mainCards } from "../../lib/site-data";
+import { footerLinks } from "../../lib/site-data";
 
 export const metadata = {
   title: "Main — woolyspace",
@@ -12,21 +11,6 @@ export default function MainPage() {
   return (
     <PageShell footerLinks={footerLinks} mainClassName="main-page-grid">
       <div className="page-wrap">
-        <section className="projects-section">
-          <div className="works-grid">
-            {mainCards.map((card) => (
-              <div className="card" key={card.href}>
-                <Link href={card.href}>
-                  <div className="tag">{card.tag}</div>
-                  <h3 className="card-title">{card.title}</h3>
-                  <p className="card-description">{card.description}</p>
-                  <span className="card-link">View →</span>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <section className="image-strip">
           <div className="image-strip-item">
             <img src={asset("/assets/me1.png")} alt="" />
