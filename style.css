@@ -748,6 +748,40 @@ canvas {
   margin: 0 auto;
 }
 
+/* Project prev/next navigation - fixed on viewport sides */
+.nav-icon {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(251, 247, 242, 0.95);
+  border: 0.5px solid var(--border-color);
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 20px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.nav-icon:hover {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.nav-icon-prev {
+  left: 24px;
+}
+
+.nav-icon-next {
+  right: 24px;
+}
+
 /* ============================================
    ZINE GALLERY - CSS Grid
    ============================================ */

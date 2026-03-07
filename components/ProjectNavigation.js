@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function ProjectNavigation({ prevHref, nextHref, homeHref }) {
+export default function ProjectNavigation({ prevHref, nextHref }) {
   return (
     <>
       {prevHref ? (
@@ -11,11 +11,6 @@ export default function ProjectNavigation({ prevHref, nextHref, homeHref }) {
       {nextHref ? (
         <Link href={nextHref} className="nav-icon nav-icon-next">
           →
-        </Link>
-      ) : null}
-      {homeHref ? (
-        <Link href={homeHref} className="nav-icon nav-icon-home">
-          ⌂
         </Link>
       ) : null}
     </>
