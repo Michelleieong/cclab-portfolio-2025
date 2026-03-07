@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "../style.css";
+
+@theme inline {
+  --color-paper-bg: var(--paper-bg);
+  --color-angel-blue: var(--angel-blue);
+  --color-angel-blue-light: var(--angel-blue-light);
+  --color-angel-blue-dark: var(--angel-blue-dark);
+  --color-text-color: var(--text-color);
+  --color-text-light: var(--text-light);
+  --color-accent: var(--accent);
+}
+
+html {
+  background-color: var(--paper-bg);
+}
+
+body {
+  min-height: 100vh;
+}
+
+.letter-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 100px 40px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 40px;
+  grid-template-areas:
+    "stamp"
+    "greeting"
+    "body"
+    "signature";
+  align-content: center;
+}
+
+.letter-stamp {
+  grid-area: stamp;
+  justify-self: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.letter-stamp img {
+  max-width: 120px;
+  height: auto;
+  display: inline-block;
+  filter: sepia(10%) contrast(90%);
+  opacity: 0.7;
+}
+
+.letter-greeting {
+  grid-area: greeting;
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 20px;
+  color: #2c2c2c;
+  margin-bottom: 0;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+.letter-body {
+  grid-area: body;
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 17px;
+  line-height: 2.2;
+  color: #2c2c2c;
+  margin-bottom: 0;
+  letter-spacing: 0.03em;
+}
+
+.letter-body p {
+  margin-bottom: 32px;
+}
+
+.letter-signature {
+  grid-area: signature;
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 18px;
+  margin-top: 0;
+  text-align: right;
+  color: #2c2c2c;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.sheep-stamp-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin-top: 0;
+}
+
+.sheep-stamp-link:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.sheep-stamp {
+  margin-top: 0;
+  text-align: right;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.sheep-stamp img {
+  max-width: 120px;
+  height: auto;
+  display: inline-block;
+  filter: sepia(10%) contrast(90%);
+}
+
+.zine-viewer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.zine-cover-section {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.zine-cover-section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.zine-pages-section {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.zine-pages-title {
+  font-family: "Special Elite", monospace;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+  letter-spacing: 0.1em;
+}
+
+.zine-page-container {
+  position: relative;
+  min-height: 500px;
+  margin-bottom: 40px;
+}
+
+.zine-page-item {
+  display: none;
+}
+
+.zine-page-item.active {
+  display: block;
+}
+
+.zine-page-item img {
+  max-width: 100%;
+  height: auto;
+  max-height: 85vh;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.zine-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+  padding: 30px 0;
+}
+
+.zine-btn {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 0.5px solid #ddd;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 24px;
+  color: #333;
+  user-select: none;
+}
+
+.zine-btn:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+
+.zine-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.zine-counter {
+  font-family: "Special Elite", monospace;
+  font-size: 14px;
+  color: #666;
+  letter-spacing: 0.1em;
+}
+
+.zine-gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.zine-gallery-container img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.zine-viewer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 40px 20px;
+  perspective: 2000px;
+}
+
+.book-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 90vh;
+  max-height: 900px;
+  margin: 0 auto;
+}
+
+.book-page {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform-origin: left center;
+  backface-visibility: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.book-page-hidden {
+  display: none;
+}
+
+.book-page.cover {
+  width: 100%;
+  left: 0;
+  z-index: 10;
+}
+
+.book-page.cover.flipped {
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+
+.book-page.left {
+  left: 0;
+  transform-origin: right center;
+}
+
+.book-page.right {
+  right: 0;
+  transform-origin: left center;
+}
+
+.book-page.left.flipped {
+  transform: rotateY(-180deg);
+}
+
+.book-page.right.flipped {
+  transform: rotateY(180deg);
+}
+
+.book-page.back {
+  width: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.book-page.back.visible {
+  z-index: 10;
+}
+
+.page-pair {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.page-pair.active {
+  display: block;
+}
+
+.navigation-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(44, 44, 44, 0.6);
+  font-family: "Special Elite", monospace;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 100;
+  transition: opacity 0.3s;
+}
+
+.navigation-hint.hidden {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .letter-container {
+    padding: 60px 24px;
+  }
+
+  .book-container {
+    height: 70vh;
+    max-height: 600px;
+  }
+}

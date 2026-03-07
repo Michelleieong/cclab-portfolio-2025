@@ -1,0 +1,59 @@
+import Link from "next/link";
+
+import PageShell from "../../components/PageShell";
+import { footerLinks, homeNavItems, mainCards } from "../../lib/site-data";
+
+export const metadata = {
+  title: "Main — woolyspace",
+};
+
+export default function MainPage() {
+  return (
+    <PageShell navItems={homeNavItems} footerLinks={footerLinks} mainClassName="main-page-grid">
+      <div className="page-wrap">
+        <section className="projects-section">
+          <div className="works-grid">
+            {mainCards.map((card) => (
+              <div className="card" key={card.href}>
+                <Link href={card.href}>
+                  <div className="tag">{card.tag}</div>
+                  <h3 className="card-title">{card.title}</h3>
+                  <p className="card-description">{card.description}</p>
+                  <span className="card-link">View →</span>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="image-strip">
+          <div className="image-strip-item">
+            <img src="/assets/me1.png" alt="" />
+          </div>
+          <div className="image-strip-item">
+            <img src="/assets/me2.png" alt="" />
+          </div>
+          <div className="image-strip-item">
+            <img src="/assets/me3.png" alt="" />
+          </div>
+        </section>
+
+        <div className="decorative-sheep decorative-sheep-1">
+          <img src="/assets/sheep1.png" alt="" />
+        </div>
+        <div className="decorative-sheep decorative-sheep-2">
+          <img src="/assets/sheep2.png" alt="" />
+        </div>
+        <div className="sign-stamp-corner sign-stamp-top-left">
+          <img src="/assets/sign1.png" alt="Sign stamp" />
+        </div>
+        <div className="sign-stamp-corner sign-stamp-bottom-right">
+          <img src="/assets/sign1.png" alt="Sign stamp" />
+        </div>
+        <div className="sign-stamp-medium">
+          <img src="/assets/sign4.png" alt="Wing decoration" />
+        </div>
+      </div>
+    </PageShell>
+  );
+}

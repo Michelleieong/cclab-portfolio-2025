@@ -1,0 +1,21 @@
+import Link from "next/link";
+
+export default function ArchiveList({ items }) {
+  return (
+    <div className="items-list">
+      {items.map((item) => (
+        <div className="item-entry" key={item.href}>
+          <Link href={item.href} className="item-link">
+            <div className="item-image">
+              <img src={item.image} alt={item.imageAlt} />
+            </div>
+            <div className="item-info">
+              <h2 className="item-title">{item.title}</h2>
+              <p className="item-description">{item.description}</p>
+            </div>
+          </Link>
+        </div>
+      ))}
+    </div>
+  );
+}
