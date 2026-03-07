@@ -21,7 +21,7 @@ export default function ZineTwoPage() {
         />
         <div className="project-description" style={{ marginTop: "60px" }}>
           <p>
-            <Link href="/extra">← Back to Extra</Link>
+            <Link href="/work">← Back to Work</Link>
           </p>
         </div>
       </div>

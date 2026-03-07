@@ -5,7 +5,7 @@ const NAV_ITEMS = [
   { href: "/main", label: "Main" },
   { href: "/cclab-works", label: "CC Lab" },
   { href: "/about", label: "About" },
-  { href: "/extra", label: "Extra" },
+  { href: "/work", label: "Work" },
 ];
 
 export default function SiteHeader() {

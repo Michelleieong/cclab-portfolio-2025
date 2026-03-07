@@ -7,7 +7,7 @@ export default function SimpleBackPage({
   footerLinks = [],
   title,
   subtitle,
-  backHref = "/extra",
+  backHref = "/work",
 }) {
   return (
     <PageShell footerLinks={footerLinks}>
@@ -15,7 +15,7 @@ export default function SimpleBackPage({
         <ProjectHero title={title} subtitle={subtitle} />
         <div className="project-description">
           <p>
-            <Link href={backHref}>← Back to Extra</Link>
+            <Link href={backHref}>← Back to Work</Link>
           </p>
         </div>
       </div>

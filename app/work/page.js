@@ -5,10 +5,10 @@ import ArchiveList from "../../components/ArchiveList";
 import { extraItems, footerLinks } from "../../lib/site-data";
 
 export const metadata = {
-  title: "Extra — woolyspace",
+  title: "Work — woolyspace",
 };
 
-export default function ExtraPage() {
+export default function WorkPage() {
   return (
     <PageShell footerLinks={footerLinks}>
       <div className="archive-container">
@@ -17,7 +17,7 @@ export default function ExtraPage() {
         </div>
 
         <div className="archive-title">
-          <h1>More about me</h1>
+          <h1>Works</h1>
         </div>
 
         <ArchiveList items={extraItems} />
