@@ -4,19 +4,18 @@ import PageShell from "./PageShell";
 import ProjectHero from "./ProjectHero";
 
 export default function SimpleBackPage({
-  navItems,
   footerLinks = [],
   title,
   subtitle,
-  backHref = "/extra",
+  backHref = "/work",
 }) {
   return (
-    <PageShell navItems={navItems} footerLinks={footerLinks}>
+    <PageShell footerLinks={footerLinks}>
       <div className="page-wrap">
         <ProjectHero title={title} subtitle={subtitle} />
         <div className="project-description">
           <p>
-            <Link href={backHref}>← Back to Extra</Link>
+            <Link href={backHref}>← Back to Work</Link>
           </p>
         </div>
       </div>

@@ -1,6 +1,12 @@
 import Link from "next/link";
 
-export default function SiteHeader({ navItems = [] }) {
+const NAV_ITEMS = [
+  { href: "/", label: "Home" },
+  { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+];
+
+export default function SiteHeader() {
   return (
     <header>
       <div className="header-content">
@@ -9,7 +15,7 @@ export default function SiteHeader({ navItems = [] }) {
         </div>
         <nav>
           <ul>
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <li key={item.href}>
                 <Link href={item.href}>{item.label}</Link>
               </li>
