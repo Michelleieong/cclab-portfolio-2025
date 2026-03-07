@@ -23,7 +23,7 @@ export default function ProjectSevenPage() {
       <EmbeddedSketch
         src="https://editor.p5js.org/yangm122/full/pUrL-5MC-"
         width={1200}
-        height={400}
+        height={700}
       />
     </ProjectPage>
   );

@@ -16,7 +16,7 @@ export default function ProjectFourPage() {
       description={page.description}
       navigation={{ prevHref: page.prevHref, nextHref: page.nextHref }}
     >
-      <EmbeddedSketch src="https://editor.p5js.org/yangm122/full/R-Oc_G5LG" width={400} height={600} />
+      <EmbeddedSketch src="https://editor.p5js.org/yangm122/full/R-Oc_G5LG" width={400} height={750} />
     </ProjectPage>
   );
 }
