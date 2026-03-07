@@ -1,3 +1,4 @@
+import { asset } from "../../lib/asset";
 import Link from "next/link";
 
 import PageShell from "../../components/PageShell";
@@ -28,30 +29,30 @@ export default function MainPage() {
 
         <section className="image-strip">
           <div className="image-strip-item">
-            <img src="/assets/me1.png" alt="" />
+            <img src={asset("/assets/me1.png")} alt="" />
           </div>
           <div className="image-strip-item">
-            <img src="/assets/me2.png" alt="" />
+            <img src={asset("/assets/me2.png")} alt="" />
           </div>
           <div className="image-strip-item">
-            <img src="/assets/me3.png" alt="" />
+            <img src={asset("/assets/me3.png")} alt="" />
           </div>
         </section>
 
         <div className="decorative-sheep decorative-sheep-1">
-          <img src="/assets/sheep1.png" alt="" />
+          <img src={asset("/assets/sheep1.png")} alt="" />
         </div>
         <div className="decorative-sheep decorative-sheep-2">
-          <img src="/assets/sheep2.png" alt="" />
+          <img src={asset("/assets/sheep2.png")} alt="" />
         </div>
         <div className="sign-stamp-corner sign-stamp-top-left">
-          <img src="/assets/sign1.png" alt="Sign stamp" />
+          <img src={asset("/assets/sign1.png")} alt="Sign stamp" />
         </div>
         <div className="sign-stamp-corner sign-stamp-bottom-right">
-          <img src="/assets/sign1.png" alt="Sign stamp" />
+          <img src={asset("/assets/sign1.png")} alt="Sign stamp" />
         </div>
         <div className="sign-stamp-medium">
-          <img src="/assets/sign4.png" alt="Wing decoration" />
+          <img src={asset("/assets/sign4.png")} alt="Wing decoration" />
         </div>
       </div>
     </PageShell>
