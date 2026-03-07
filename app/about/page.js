@@ -1,5 +1,7 @@
 import { asset } from "../../lib/asset";
-import Link from "next/link";
+
+import PageShell from "../../components/PageShell";
+import { footerLinks } from "../../lib/site-data";
 
 export const metadata = {
   title: "About — woolyspace",
@@ -7,54 +9,36 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
+    <PageShell footerLinks={footerLinks} mainClassName="main-page-grid">
       <div className="page-wrap">
-        <div className="letter-container">
-          <div className="letter-stamp">
-            <img src={asset("/assets/sign3.png")} alt="Sign decoration" />
+        <section className="image-strip">
+          <div className="image-strip-item">
+            <img src={asset("/assets/me1.png")} alt="" />
           </div>
-
-          <p className="letter-greeting">Dear Reader,</p>
-
-          <div className="letter-body">
-            <p>Hi, it&apos;s Michelle here.</p>
-            <p>
-              I&apos;m from Hong Kong. I love fashion, and I&apos;m drawn to art and
-              aesthetics in almost everything. I play the piano. I dance ballet.
-            </p>
-            <p>
-              I love to follow my inner voice, to explore my inner self,
-              <br />
-              and to think about meaningful philosophy.
-              <br />
-              I&apos;m drawn to the spirituality that exists in all things.
-            </p>
-            <p>
-              I want to do work that feels honest. Work that matters to the world,
-              <br />
-              and at the same time brings me closer to understanding myself.
-            </p>
-            <p>
-              My dream is to become someone who can make an impact,
-              <br />
-              and to work in the industry I love.
-            </p>
+          <div className="image-strip-item">
+            <img src={asset("/assets/me2.png")} alt="" />
           </div>
-
-          <div className="letter-signature">
-            <p>
-              With love,
-              <br />
-              Michelle
-            </p>
-            <Link href="/main" className="sheep-stamp-link">
-              <div className="sheep-stamp">
-                <img src={asset("/assets/sheepwords.png")} alt="Sheepwords stamp" />
-              </div>
-            </Link>
+          <div className="image-strip-item">
+            <img src={asset("/assets/me3.png")} alt="" />
           </div>
+        </section>
+
+        <div className="decorative-sheep decorative-sheep-1">
+          <img src={asset("/assets/sheep1.png")} alt="" />
+        </div>
+        <div className="decorative-sheep decorative-sheep-2">
+          <img src={asset("/assets/sheep2.png")} alt="" />
+        </div>
+        <div className="sign-stamp-corner sign-stamp-top-left">
+          <img src={asset("/assets/sign1.png")} alt="Sign stamp" />
+        </div>
+        <div className="sign-stamp-corner sign-stamp-bottom-right">
+          <img src={asset("/assets/sign1.png")} alt="Sign stamp" />
+        </div>
+        <div className="sign-stamp-medium">
+          <img src={asset("/assets/sign4.png")} alt="Wing decoration" />
         </div>
       </div>
-    </main>
+    </PageShell>
   );
 }
