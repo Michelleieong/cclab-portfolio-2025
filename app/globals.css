@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "../style.css";
+
+@theme inline {
+  --color-paper-bg: var(--paper-bg);
+  --color-angel-blue: var(--angel-blue);
+  --color-angel-blue-light: var(--angel-blue-light);
+  --color-angel-blue-dark: var(--angel-blue-dark);
+  --color-text-color: var(--text-color);
+  --color-text-light: var(--text-light);
+  --color-accent: var(--accent);
+}
+
+html {
+  background-color: var(--paper-bg);
+}
+
+body {
+  min-height: 100vh;
+}
