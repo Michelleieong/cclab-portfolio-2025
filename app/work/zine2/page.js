@@ -2,23 +2,18 @@ import Link from "next/link";
 
 import PageShell from "../../../components/PageShell";
 import ProjectHero from "../../../components/ProjectHero";
-import ZineBook from "../../../components/ZineBook";
-import { zineBookPages } from "../../../lib/site-data";
+import Zine2Gallery from "../../../components/Zine2Gallery";
 
 export const metadata = {
-  title: "Zine 作品2 — woolyspace",
+  title: "See Me — woolyspace",
 };
 
 export default function ZineTwoPage() {
   return (
     <PageShell>
       <div className="page-wrap">
-        <ProjectHero title="Zine 作品2" subtitle="Visual pages" />
-        <ZineBook
-          coverImage="/zine2Cover.png"
-          backImage="/zine2Back.png"
-          pagePairs={zineBookPages}
-        />
+        <ProjectHero title="See Me" subtitle="visual pages - zine/2025" />
+        <Zine2Gallery />
         <div className="project-description" style={{ marginTop: "60px" }}>
           <p>
             <Link href="/work">← Back to Work</Link>
