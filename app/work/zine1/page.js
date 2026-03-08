@@ -6,14 +6,14 @@ import ZineGallery from "../../../components/ZineGallery";
 import { zineOneImages } from "../../../lib/site-data";
 
 export const metadata = {
-  title: "Zine 1 — woolyspace",
+  title: "EXBTONs — woolyspace",
 };
 
 export default function ZineOnePage() {
   return (
     <PageShell>
       <div className="page-wrap">
-        <ProjectHero title="Zine 作品1" subtitle="Visual pages" />
+        <ProjectHero title="EXBTONs" subtitle="visual pages - zine/2024" />
         <ZineGallery images={zineOneImages} />
         <div className="project-description" style={{ marginTop: "60px" }}>
           <p>
