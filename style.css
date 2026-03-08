@@ -728,7 +728,8 @@ body.home-page .image-strip-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 400px;
+  /* min-height 需包含 padding(80px)：400px canvas 需 480px，600px 需 680px */
+  min-height: 680px;
 }
 
 #sketch-container {
