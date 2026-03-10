@@ -313,11 +313,15 @@ body.home-page .card {
 }
 
 .card-description {
-  font-size: 13px;
+  font-family: 'Gruppo', sans-serif;
+  font-size: 16px;
   color: var(--text-light);
   line-height: 1.6;
   margin-bottom: 12px;
   font-weight: 300;
+  transform: scaleY(1.1);
+  display: inline-block;
+  transform-origin: left center;
 }
 
 .card-link {
@@ -504,23 +508,25 @@ body.home-page .image-strip-item {
   padding: 80px 40px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
   gap: 40px;
   grid-template-areas:
     "logo"
     "title"
-    "items";
+    "items"
+    "wings";
 }
 
 .archive-logo {
   grid-area: logo;
   text-align: center;
   margin-bottom: 0;
+  margin-top: -32px;
   opacity: 0.8;
 }
 
 .archive-logo img {
-  max-width: 100px;
+  max-width: 180px;
   height: auto;
   display: inline-block;
 }
@@ -532,11 +538,10 @@ body.home-page .image-strip-item {
 }
 
 .archive-title h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 32px;
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 48px;
   font-weight: 400;
   color: var(--text-color);
-  letter-spacing: 0.05em;
 }
 
 .items-list {
@@ -545,6 +550,22 @@ body.home-page .image-strip-item {
   grid-template-columns: 1fr;
   gap: 40px;
   margin-bottom: 0;
+}
+
+.archive-wings {
+  grid-area: wings;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 200px;
+  margin-top: 200px;
+}
+
+.archive-wings img {
+  max-width: 500px;
+  height: auto;
+  display: block;
 }
 
 .item-entry {
@@ -593,7 +614,7 @@ body.home-page .image-strip-item {
 }
 
 .item-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Kaisei Opti', serif;
   font-size: 20px;
   font-weight: 600;
   color: var(--text-color);
@@ -602,13 +623,16 @@ body.home-page .image-strip-item {
 }
 
 .item-description {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-family: 'Gruppo', sans-serif;
+  font-size: 17px;
   font-weight: 300;
   color: var(--text-color);
   margin: 0;
   line-height: 1.6;
   opacity: 0.8;
+  transform: scaleY(1.1);
+  display: inline-block;
+  transform-origin: left center;
 }
 
 /* ============================================
@@ -728,13 +752,16 @@ body.home-page .image-strip-item {
 }
 
 .project-hero .subtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-family: 'Gruppo', sans-serif;
+  font-size: 17px;
   font-weight: 300;
   color: var(--text-light);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 40px;
+  transform: scaleY(1.1);
+  display: inline-block;
+  transform-origin: left center;
 }
 
 .project-description {
@@ -757,6 +784,7 @@ body.home-page .image-strip-item {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 680px;
   /* min-height 需包含 padding(80px)：400px canvas 需 480px，600px 需 680px */
   min-height: 680px;
 }

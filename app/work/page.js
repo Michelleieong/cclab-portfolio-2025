@@ -28,6 +28,10 @@ export default function WorkPage() {
         </div>
 
         <ArchiveList items={extraItems} />
+
+        <div className="archive-wings">
+          <img src={asset("/assets/wings.png")} alt="" />
+        </div>
       </div>
     </PageShell>
   );

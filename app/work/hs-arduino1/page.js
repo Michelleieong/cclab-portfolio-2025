@@ -1,14 +1,14 @@
 import SimpleBackPage from "../../../components/SimpleBackPage";
 
 export const metadata = {
-  title: "高中Arduino作品1 — woolyspace",
+  title: "Less ingredients — woolyspace",
 };
 
 export default function HighSchoolArduinoOnePage() {
   return (
     <SimpleBackPage
-      title="高中Arduino作品1"
-      subtitle="Coming soon"
+      title="Less ingredients"
+      subtitle="Arduino / 2023"
     />
   );
 }
