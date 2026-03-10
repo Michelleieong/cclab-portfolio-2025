@@ -64,6 +64,35 @@ h3 {
   z-index: 1;
 }
 
+/* Works 子页左上角返回（layout 内 WorkBackNav） */
+.work-back-nav {
+  position: fixed;
+  top: 78px;
+  left: 40px;
+  z-index: 900;
+}
+
+.work-back-link {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(251, 247, 242, 0.92);
+  backdrop-filter: blur(8px);
+  transition: background 0.2s ease;
+}
+
+.work-back-link:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
 /* ============================================
    HEADER - CSS Grid Layout
    ============================================ */
@@ -808,6 +837,11 @@ canvas {
 @media (max-width: 768px) {
   .page-wrap {
     padding: 0 24px;
+  }
+
+  .work-back-nav {
+    left: 24px;
+    top: 108px;
   }
 
   header {
