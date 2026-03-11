@@ -7,7 +7,7 @@ export default function ArchiveList({ items }) {
       {items.map((item) => (
         <div className="item-entry" key={item.href}>
           <Link href={item.href} className="item-link">
-            <div className="item-image">
+            <div className={`item-image${item.imageScale ? " item-image--zoom" : ""}`}>
               <img src={asset(item.image)} alt={item.imageAlt} />
             </div>
             <div className="item-info">

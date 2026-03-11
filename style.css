@@ -606,6 +606,11 @@ body.home-page .image-strip-item {
   display: block;
 }
 
+.item-image--zoom img {
+  transform: scale(1.1);
+  transform-origin: center center;
+}
+
 .item-info {
   flex: 1;
   display: flex;
