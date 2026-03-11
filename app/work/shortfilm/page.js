@@ -1,22 +1,22 @@
-import { asset } from "../../../lib/asset";
-
 import SimpleBackPage from "../../../components/SimpleBackPage";
 
 export const metadata = {
   title: "Wildflower — woolyspace",
 };
 
+const DRIVE_VIDEO_ID = "1djhZie8wmdoR25fId_7QWk0O0JydYfP0";
+const DRIVE_PREVIEW_URL = `https://drive.google.com/file/d/${DRIVE_VIDEO_ID}/preview`;
+
 export default function ShortFilmPage() {
   return (
     <SimpleBackPage title="Wildflower" subtitle="short film / 2024">
-      <div className="video-container" style={{ margin: "40px 0" }}>
-        <video
-          controls
-          style={{ width: "100%", maxWidth: "800px", margin: "0 auto", display: "block" }}
-          src={asset(encodeURI("/Wildflower by Livia and Michelle.mp4"))}
-        >
-          Your browser does not support the video tag.
-        </video>
+      <div className="video-container">
+        <iframe
+          src={DRIVE_PREVIEW_URL}
+          title="Wildflower - short film by Livia and Michelle"
+          allow="autoplay"
+          allowFullScreen
+        />
       </div>
     </SimpleBackPage>
   );
