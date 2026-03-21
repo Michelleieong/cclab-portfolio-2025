@@ -12,7 +12,7 @@ export default function ZineTwoPage() {
   return (
     <PageShell>
       <div className="page-wrap">
-        <ProjectHero title="See Me" subtitle="visual pages - zine/2025" />
+        <ProjectHero title="See Me" subtitle="Artworks / 2023" />
         <Zine2Gallery />
         <div className="project-description" style={{ marginTop: "60px" }}>
           <p>

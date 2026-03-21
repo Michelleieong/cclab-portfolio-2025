@@ -13,7 +13,7 @@ const images = [
 
 export default function HighSchoolArduinoOnePage() {
   return (
-    <SimpleBackPage title="Less ingredients" subtitle="Arduino / 2023">
+    <SimpleBackPage title="Less ingredients" subtitle="Artworks / 2023">
       <ZineGallery images={images} uniformSize />
     </SimpleBackPage>
   );

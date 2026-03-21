@@ -2,14 +2,14 @@ import SimpleBackPage from "../../../components/SimpleBackPage";
 import ZineGallery from "../../../components/ZineGallery";
 
 export const metadata = {
-  title: "橘子皮作品 — woolyspace",
+  title: "Media Art — woolyspace",
 };
 
-const images = [{ src: "/pj4.png", alt: "橘子皮作品" }];
+const images = [{ src: "/pj4.png", alt: "Media Art" }];
 
 export default function OrangePeelPage() {
   return (
-    <SimpleBackPage title="橘子皮作品" subtitle="Coming soon">
+    <SimpleBackPage title="Media Art" subtitle="Artworks / 2023">
       <ZineGallery images={images} uniformSize />
     </SimpleBackPage>
   );

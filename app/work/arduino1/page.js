@@ -13,7 +13,7 @@ const images = [
 
 export default function ArduinoOnePage() {
   return (
-    <SimpleBackPage title="Portable Relaxation Companion" subtitle="interactive design / 2023">
+    <SimpleBackPage title="Portable Relaxation Companion" subtitle="Artworks / 2023">
       <ZineGallery images={images} uniformSize />
     </SimpleBackPage>
   );

@@ -9,7 +9,7 @@ const DRIVE_PREVIEW_URL = `https://drive.google.com/file/d/${DRIVE_VIDEO_ID}/pre
 
 export default function ArduinoTwoPage() {
   return (
-    <SimpleBackPage title="The Watanabe Atlas" subtitle="Podcast / 2025" backHref="/work">
+    <SimpleBackPage title="The Watanabe Atlas" subtitle="Artworks / 2023" backHref="/work">
       <div className="video-container">
         <iframe
           src={DRIVE_PREVIEW_URL}

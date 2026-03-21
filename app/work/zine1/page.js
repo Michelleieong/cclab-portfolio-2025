@@ -13,7 +13,7 @@ export default function ZineOnePage() {
   return (
     <PageShell>
       <div className="page-wrap">
-        <ProjectHero title="EXBTONs" subtitle="visual pages - zine/2024" />
+        <ProjectHero title="EXBTONs" subtitle="Artworks / 2023" />
         <ZineGallery images={zineOneImages} />
         <div className="project-description" style={{ marginTop: "60px" }}>
           <p>

@@ -9,7 +9,7 @@ const DRIVE_PREVIEW_URL = `https://drive.google.com/file/d/${DRIVE_VIDEO_ID}/pre
 
 export default function ShortFilmPage() {
   return (
-    <SimpleBackPage title="Wildflower" subtitle="short film / 2024">
+    <SimpleBackPage title="Wildflower" subtitle="Artworks / 2023">
       <div className="video-container">
         <iframe
           src={DRIVE_PREVIEW_URL}

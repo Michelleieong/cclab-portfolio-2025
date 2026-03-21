@@ -13,7 +13,7 @@ export default function ZinePage() {
   return (
     <PageShell>
       <div className="page-wrap">
-        <ProjectHero title="Zine" subtitle="Visual pages" />
+        <ProjectHero title="Zine" subtitle="Artworks / 2023" />
         <ZineViewer
           coverImage={{ src: "/zinecover.png", alt: "Zine Cover" }}
           pages={zinePages}
