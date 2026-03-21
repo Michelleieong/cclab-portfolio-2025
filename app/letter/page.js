@@ -6,8 +6,17 @@ export const metadata = {
 };
 
 export default function LetterPage() {
+  const cursorUrl = asset("/cursors/quill-32.png");
   return (
-    <main>
+    <main className="letter-page">
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .letter-page, .letter-page *,
+          .letter-page a, .letter-page a:hover {
+            cursor: url("${cursorUrl}") 4 28, auto !important;
+          }
+        `,
+      }} />
       <div className="page-wrap">
         <div className="letter-container">
           <div className="letter-stamp">
@@ -47,9 +56,9 @@ export default function LetterPage() {
               <br />
               Michelle
             </p>
-            <Link href="/work" className="sheep-stamp-link">
+            <Link href="/work" className="sheep-stamp-link" title="View my works">
               <div className="sheep-stamp">
-                <img src={asset("/assets/sheepwords.png")} alt="Sheepwords stamp" />
+                <img src={asset("/assets/sheepwords.png")} alt="View works — click to enter" />
               </div>
             </Link>
           </div>

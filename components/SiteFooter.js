@@ -8,6 +8,7 @@ export default function SiteFooter({ links = [] }) {
             <a
               key={link.href}
               href={link.href}
+              className={link.className}
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noreferrer" : undefined}
             >

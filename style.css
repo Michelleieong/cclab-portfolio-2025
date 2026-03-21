@@ -237,12 +237,27 @@ main:not(.envelope-landing) {
 .envelope-image-large {
   max-width: 720px;
   width: 90%;
-  filter: drop-shadow(0 12px 32px rgba(135, 206, 235, 0.2));
+  filter: drop-shadow(0 12px 32px rgba(135, 206, 235, 0.2))
+    drop-shadow(0 0 24px rgba(135, 206, 235, 0.4));
   transition: filter 0.3s ease;
+  animation: envelope-glow-pulse 2.5s ease-in-out infinite;
 }
 
 .envelope-link:hover .envelope-image-large {
-  filter: drop-shadow(0 16px 40px rgba(135, 206, 235, 0.3));
+  filter: drop-shadow(0 16px 40px rgba(135, 206, 235, 0.3))
+    drop-shadow(0 0 32px rgba(135, 206, 235, 0.6));
+  animation: none;
+}
+
+@keyframes envelope-glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 12px 32px rgba(135, 206, 235, 0.2))
+      drop-shadow(0 0 20px rgba(135, 206, 235, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 14px 36px rgba(135, 206, 235, 0.3))
+      drop-shadow(0 0 32px rgba(135, 206, 235, 0.5));
+  }
 }
 
 .envelope-image-large img {
@@ -257,6 +272,14 @@ main:not(.envelope-landing) {
   color: var(--text-light);
   letter-spacing: 0.1em;
   font-style: italic;
+}
+
+.envelope-subtitle::after {
+  content: " · click to open";
+  font-size: 11px;
+  opacity: 0.7;
+  margin-left: 6px;
+  font-style: normal;
 }
 
 /* ============================================
@@ -488,7 +511,7 @@ body.home-page .image-strip-item {
 .sheep-stamp {
   margin-top: 0;
   text-align: right;
-  opacity: 0.7;
+  opacity: 0.9;
   cursor: pointer;
 }
 
@@ -497,6 +520,23 @@ body.home-page .image-strip-item {
   height: auto;
   display: inline-block;
   filter: sepia(10%) contrast(90%);
+  animation: stamp-glow-bounce 2s ease-in-out infinite;
+}
+
+.sheep-stamp-link:hover .sheep-stamp img {
+  animation: none;
+  box-shadow: 0 0 24px rgba(212, 165, 116, 0.6);
+}
+
+@keyframes stamp-glow-bounce {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 0 16px rgba(212, 165, 116, 0.4);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow: 0 0 28px rgba(212, 165, 116, 0.6);
+  }
 }
 
 /* ============================================
@@ -673,6 +713,11 @@ body.home-page .image-strip-item {
 
 .footer-links a:hover {
   color: var(--text-color);
+}
+
+.footer-links a.quill-cursor-link,
+.footer-links a.quill-cursor-link:hover {
+  cursor: url("/cursors/quill-32.png") 4 28, auto;
 }
 
 /* ============================================
