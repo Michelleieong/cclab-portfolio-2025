@@ -14,7 +14,7 @@ const images = [
 export default function DrawingsPage() {
   return (
     <SimpleBackPage title="绘画作品" subtitle="3页作品">
-      <ZineGallery images={images} />
+      <ZineGallery images={images} uniformSize />
     </SimpleBackPage>
   );
 }

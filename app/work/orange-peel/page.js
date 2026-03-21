@@ -10,7 +10,7 @@ const images = [{ src: "/pj4.png", alt: "橘子皮作品" }];
 export default function OrangePeelPage() {
   return (
     <SimpleBackPage title="橘子皮作品" subtitle="Coming soon">
-      <ZineGallery images={images} />
+      <ZineGallery images={images} uniformSize />
     </SimpleBackPage>
   );
 }

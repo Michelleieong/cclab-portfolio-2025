@@ -250,6 +250,19 @@ body {
   max-width: 900px;
 }
 
+/* 统一尺寸：所有图片相同大小（4:3 比例容器）*/
+.zine-gallery-container--uniform {
+  gap: 40px;
+}
+.zine-gallery-container--uniform img {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(0, 0, 0, 0.03);
+}
+
 /* Zine2 (See Me) - 完整展现原图，页面间留空间，连页中间无缝隙 */
 .zine2-gallery {
   display: flex;
